@@ -9,7 +9,13 @@ import {
 } from 'react-native';
 import React, {Component} from 'react';
 
+//Dependencies for User Authentication:
 
+/*
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Security, ImplicitCallback } from '@okta/okta-react';
+import Home from './Home';
+*/
 
 // ClientID: 0oa1k8ligc7pzlVuF357
 // Org URL: https://dev-835108.okta.com
@@ -114,3 +120,30 @@ export default class Login extends Component {
         
     }
 }};
+
+
+
+//User Authentication:
+
+/*const config = {
+  issuer: 'https://${yourOktaDomain}/oauth2/default',
+  redirectUri: window.location.origin + '/implicit/callback',
+  clientId: '{clientId}',
+  pkce: true
+}
+
+//User Authentication
+
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <Security {...config}>
+          <Route path='/' exact={true} component={Home}/>
+          <Route path='/implicit/callback' component={ImplicitCallback}/>
+        </Security>
+      </Router>
+    );
+  }
+}
+*/
