@@ -1,13 +1,39 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { 
+  StyleSheet, 
+  Text, 
+  View 
+} from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
-  );
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Security, ImplicitCallback } from '@okta/okta-react';
+import Home from './Home';
+
+/*const config = {
+  issuer: 'https://${yourOktaDomain}/oauth2/default',
+  redirectUri: window.location.origin + '/implicit/callback',
+  clientId: '{clientId}',
+  pkce: true
 }
+
+
+
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <Security {...config}>
+          <Route path='/' exact={true} component={Home}/>
+          <Route path='/implicit/callback' component={ImplicitCallback}/>
+        </Security>
+      </Router>
+    );
+  }
+}
+*/
+
+
+
+
 
 const styles = StyleSheet.create({
   container: {
@@ -17,3 +43,4 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+export default App;
