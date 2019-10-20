@@ -7,6 +7,18 @@ import {
     TouchableOpactity,
     Platform
 } from 'react-native';
+<<<<<<< Updated upstream
+=======
+
+import MapView, {
+    Marker,
+    AnimatedRegion,
+    Polyline,
+    Provider_Google
+
+} from 'react-native-maps';
+import haversine from 'haversine';
+>>>>>>> Stashed changes
 
 import MapView, {
     Marker,
@@ -139,6 +151,7 @@ render() {
         <TouchableOpactity style={[styles.bubble, styles.button]}>
             <Text style={styles.bottomBarContent}>
             {parseFloat(this.state.distanceTravelled).toFixed(2)} mi
+<<<<<<< Updated upstream
             </Text>
         </TouchableOpactity>
     </View>
@@ -146,4 +159,20 @@ render() {
     );
 }}
 
+=======
+        </Text>
+    </TouchableOpactity>
+</View>
+}
+}
+};
+
+const styles = Stylesheet.create({
+    container: {
+        ...Stylesheet.absoluteFillObject,
+        justifyContent: "flex-end",
+        alignItems: 'center'
+    }
+})
+>>>>>>> Stashed changes
 
