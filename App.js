@@ -8,8 +8,11 @@ import {
 } from 'react-native';
 import { createStackNavigator} from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
-import LoginForm from './LoginForm'
-import LoginScreen from './LoginScreen'
+import LoginForm from './Login/LoginFormScreen'
+import LoginScreen from './Login/LoginScreen'
+import EnableLocation1Screen from './OnBoarding/EnableLocation1Screen'
+import EnableLocation2Screen from './OnBoarding/EnableLocation2Screen'
+import GettingStartedScreen from './OnBoarding/GettingStarted'
 
 
  class App extends React.Component {
@@ -21,6 +24,9 @@ import LoginScreen from './LoginScreen'
 }
 
 const AppStackNavigator = createStackNavigator({
+  Intro:EnableLocation1Screen,
+  Intro2:EnableLocation2Screen,
+  Intro3:GettingStartedScreen,
   Login:LoginScreen,
   Form:LoginForm,
   
