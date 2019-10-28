@@ -1,42 +1,32 @@
 import React from 'react';
-import { 
-  Text, 
-  View,
-  AppRegistry,
-  StyleSheet
-  
-} from 'react-native';
 import { createStackNavigator} from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
-import LoginForm from './Login/LoginFormScreen'
-import LoginScreen from './Login/LoginScreen'
+import LoginForm from './Login/LoginFormScreen';
+import GettingStartedScreen from './Login/GettingStartedScreen'
 import EnableLocation1Screen from './OnBoarding/EnableLocation1Screen'
 import EnableLocation2Screen from './OnBoarding/EnableLocation2Screen'
-import GettingStartedScreen from './OnBoarding/GettingStarted'
+import LocationInfo from './OnBoarding/LocationInfo'
 
 
- class App extends React.Component {
+
+export default class App extends React.Component {
   render(){
-    return(
-      <AppStackNavigator/>
-    );
+    return <AppContainer/>;
+    } 
   }
-}
 
-const AppStackNavigator = createStackNavigator({
-  Intro:EnableLocation1Screen,
-  Intro2:EnableLocation2Screen,
-  Intro3:GettingStartedScreen,
-  Login:LoginScreen,
-  Form:LoginForm,
-  
-},
+const AppNavigator = createStackNavigator({
+  GetStared: {screen:GettingStartedScreen},
+  Form: {screen: LoginForm},
+  Intro:{screen: EnableLocation1Screen},
+  Intro2:{screen: EnableLocation2Screen},
+  Intro3:{screen: LocationInfo},
+  },
 { 
-  initialRouteName: 'Login'
+  initialRouteNameParams: 'GetStarted'
 
-})
+});
+const AppContainer = createAppContainer(AppNavigator);
 
-const AppContainer = createAppContainer(AppStackNavigator);
-export default AppContainer;
 
 
