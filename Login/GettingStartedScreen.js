@@ -7,7 +7,6 @@ import {
     Button,
     StyleSheet,
      } from 'react-native';
-import * as Font from 'expo-font';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 

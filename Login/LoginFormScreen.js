@@ -7,6 +7,7 @@ import { View,
     KeyboardAvoidingView,
     StatusBar,
     Button,
+    Image
 } from 'react-native';
 import {
   KeyboardAwareScrollView
@@ -30,10 +31,16 @@ import Home from './Home';
 // Org URL: https://dev-835108.okta.com
 
 export default class LoginForm extends Component {
+ 
+  static navigationOptions = {
+    header: null
+  }
   render() {
     return (
 
           <KeyboardAwareScrollView >
+            < Image source = {require('./barbershop.png')}style = {styles.CombScissor}
+            />
           <View style={styles.container}>
             
               <StatusBar style="light-content"/>
@@ -68,7 +75,7 @@ export default class LoginForm extends Component {
           <TouchableOpacity>
             < Text 
               style={styles.SignInContainer}
-              onPress={()=> this.props.navigation.popToTop()}>
+              onPress={()=> this.props.navigation.navigate('Home')}>
               Log In </Text>
             < Text 
            style={styles.RegisterContainer}
@@ -159,9 +166,9 @@ class App extends Component {
 const styles = StyleSheet.create({
     container:{
         padding:20,
-        marginTop:375,
+        marginTop:75,
         flex:1,
-        paddingHorizontal: 50,
+        paddingHorizontal: 30,
         marginBottom:50
     },
     Username: {
@@ -244,6 +251,14 @@ const styles = StyleSheet.create({
         },
     KeyBoardView:{
       flex:1,
+    },
+    CombScissor:{
+      marginTop: 50,
+      marginLeft:50,
+      maxHeight:200,
+      maxWidth:300,
+      resizeMode:'center'
+
     }
     
 })
