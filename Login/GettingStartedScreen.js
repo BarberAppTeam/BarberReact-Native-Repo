@@ -32,7 +32,7 @@ class GettingStartedScreen extends Component {
                     <Text style={styles.Welcome}> Welcome To Tonso! </Text>
                     <TouchableOpacity
                       style={styles.Next}
-                      onPress={() => this.props.navigation.navigate('Form')}> 
+                      onPress={() => this.props.navigation.navigate('Intro')}> 
                       <Text> Next </Text>
                       </TouchableOpacity>
             </View>
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
     opacity: 0.9,
     marginBottom: 400,
     fontSize:24,
-    fontFamily:'Farah',
+    fontFamily: 'Avenir Next',
     paddingHorizontal:100,
     flexDirection: 'column',
     justifyContent: 'space-around',
@@ -84,6 +84,21 @@ const styles = StyleSheet.create({
     maxHeight:350,
     marginBottom:100,
     marginTop:170,
+  },
+  GoBackContainer: {
+    backgroundColor: '#FFFFFF',
+    opacity: 0.9,
+    fontSize: 16,
+    paddingHorizontal: 20,
+    flexDirection: 'column',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    paddingVertical: 10,
+    marginTop: 5,
+    marginBottom: 1,
+    fontFamily: 'Avenir Next',
+    color: 'black',
+    textAlign: 'center'
   }
 
 })
