@@ -17,10 +17,12 @@ export default class App extends React.Component {
 
 const AppNavigator = createStackNavigator({
   GetStared: {screen:GettingStartedScreen},
-  Form: {screen: LoginForm},
   Intro:{screen: FirstOnboarding},
   Intro2:{screen: SecondOnboarding},
   Intro3:{screen: ThirdOnboarding},
+  Form: {
+    screen: LoginForm
+  },
   },
 { 
   initialRouteNameParams: 'GetStarted'

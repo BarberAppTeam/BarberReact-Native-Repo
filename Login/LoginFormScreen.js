@@ -11,8 +11,7 @@ import { View,
 } from 'react-native';
 import {
   KeyboardAwareScrollView
-} from 'react-native-keyboard-aware-scroll-view'
-import { SafeAreaView } from 'react-navigation';
+} from 'react-native-keyboard-aware-scroll-view';
 //Add StormPath dependencies Here
 //Dependencies for User Authentication:
 
@@ -81,6 +80,10 @@ export default class LoginForm extends Component {
            style={styles.RegisterContainer}
            onPress={() => this.props.navigation.navigate('Registration')}>
             Register </Text>
+            <Text
+            style={styles.GoBackContainer}
+            onPress = {() => this.props.navigation.navigate('Intro3')}>
+              Go Back </Text>
         </TouchableOpacity>
         
         <Text style={styles.NoAccountText}> Don't Have an Account? Sign Up!</Text>
@@ -177,6 +180,7 @@ const styles = StyleSheet.create({
         marginBottom: 5,
         color: '#000000',
         paddingHorizontal: 10,
+        borderBottomWidth: .5
 
       },
       Password: {
@@ -185,6 +189,7 @@ const styles = StyleSheet.create({
         marginBottom: 5,
         color: '#000000',
         paddingHorizontal: 10,
+        borderBottomWidth: .5
 
       },
 
@@ -259,6 +264,20 @@ const styles = StyleSheet.create({
       maxWidth:300,
       resizeMode:'center'
 
-    }
+    },
+    GoBackContainer: {
+      backgroundColor:'#FFFFFF',
+      opacity: 0.9,
+      fontSize: 16,
+      paddingHorizontal: 20,
+      flexDirection: 'column',
+      justifyContent: 'space-around',
+      alignItems: 'center',
+      paddingVertical: 10,
+      marginTop: 5,
+      marginBottom: 1,
+      fontFamily: 'Avenir Next',
+      color: 'black',
+      textAlign: 'center'}
     
 })
