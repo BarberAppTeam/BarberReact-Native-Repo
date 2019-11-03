@@ -4,7 +4,6 @@ import { View,
     TextInput, 
     StyleSheet,
     TouchableOpacity,
-    KeyboardAvoidingView,
     StatusBar,
     Button,
     Image
@@ -38,12 +37,10 @@ export default class LoginForm extends Component {
     return (
 
           <KeyboardAwareScrollView >
-            < Image source = {require('./barbershop.png')}style = {styles.CombScissor}
-            />
-          <View style={styles.container}>
+            <Image source={require('./barbershop.png')}style = {styles.Pillar}/>
             
               <StatusBar style="light-content"/>
-                <TextInput
+                <TextInput 
                 placeholder = 'Username or Email'
                 placeholderTextColor = 'rgb(0,0,0)'
                 /*After a user enters their username it will give the option to
@@ -55,7 +52,8 @@ export default class LoginForm extends Component {
                 keyboardType = 'email-address'
                 autoCapitalize = 'none'
                 autoCorrect = {false}
-                style = {styles.Username}/>
+                style={styles.Username}
+                />
             
              
               
@@ -71,24 +69,26 @@ export default class LoginForm extends Component {
                 //ref={()=> this.passwordInput = Input}
                 />
         
-          <TouchableOpacity>
-            < Text 
+          <TouchableOpacity
               style={styles.SignInContainer}
               onPress={()=> this.props.navigation.navigate('Home')}>
-              Log In </Text>
-            < Text 
+              <Text style={styles.LoginText}>Log In </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
            style={styles.RegisterContainer}
            onPress={() => this.props.navigation.navigate('Registration')}>
-            Register </Text>
-            <Text
-            style={styles.GoBackContainer}
-            onPress = {() => this.props.navigation.navigate('Intro3')}>
+           <Text style={styles.RegisterText}> Register </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.GoBackContainer}
+          onPress = {() => this.props.navigation.navigate('Intro3')}>
+            <Text>
               Go Back </Text>
         </TouchableOpacity>
         
         <Text style={styles.NoAccountText}> Don't Have an Account? Sign Up!</Text>
       
-      </View>
       </KeyboardAwareScrollView >
       
     )
@@ -169,9 +169,9 @@ class App extends Component {
 const styles = StyleSheet.create({
     container:{
         padding:20,
-        marginTop:75,
+        marginTop:50,
         flex:1,
-        paddingHorizontal: 30,
+        paddingHorizontal: 5,
         marginBottom:50
     },
     Username: {
@@ -179,8 +179,10 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFFFFF',
         marginBottom: 5,
         color: '#000000',
-        paddingHorizontal: 10,
-        borderBottomWidth: .5
+        borderBottomWidth: .5,
+        marginLeft:65,
+        marginRight:65,
+        marginVertical:5
 
       },
       Password: {
@@ -188,8 +190,14 @@ const styles = StyleSheet.create({
         backgroundColor: '#FFFFFF',
         marginBottom: 5,
         color: '#000000',
-        paddingHorizontal: 10,
-        borderBottomWidth: .5
+        borderBottomWidth: .5,
+        marginLeft:65,
+        marginRight:65
+
+      },
+      LoginText:{
+        color:'black',
+        fontSize:18
 
       },
 
@@ -203,34 +211,42 @@ const styles = StyleSheet.create({
         justifyContent: 'center'
       },
       SignInContainer: {
-        backgroundColor: '#000000',
-        opacity: 0.9,
-        fontSize: 16,
-        paddingHorizontal: 20,
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        paddingVertical: 10,
-        marginTop: 5,
-        marginBottom: 1,
-        fontFamily: 'Avenir Next',
-        color: '#ffffff',
-        textAlign: 'center'
+        backgroundColor: '#DDDDDD',
+          fontSize: 18,
+          opacity: .5,
+          fontFamily: 'Avenir Next',
+          flexDirection: 'column',
+          justifyContent: 'space-around',
+          alignItems: 'center',
+          alignSelf: 'center',
+          alignContent: 'center',
+          color: 'black',
+          textAlign: 'center',
+          paddingHorizontal: 96,
+          height:35,
+          marginVertical: 5,
+          borderRadius: 5
       },
       RegisterContainer: {
-        backgroundColor: '#DDDDDD',
-        opacity: 0.9,
-        fontSize: 16,
-        paddingHorizontal: 20,
-        flexDirection: 'column',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        paddingVertical: 10,
-        marginTop: 5,
-        marginBottom: 1,
-        fontFamily: 'Avenir Next',
-        color: 'black',
-        textAlign: 'center'
+        backgroundColor: '#000000',
+          fontSize: 18,
+          opacity: .9,
+          fontFamily: 'Avenir Next',
+          flexDirection: 'column',
+          justifyContent: 'space-around',
+          alignItems: 'center',
+          alignSelf: 'center',
+          alignContent: 'center',
+          color: 'white',
+          textAlign: 'center',
+          paddingVertical: 10,
+          paddingHorizontal: 90       ,
+          marginVertical: 5,
+          borderRadius: 5
+      },
+      RegisterText:{
+        color:'white',
+        fontSize:18
       },
       NoAccountText:{
       paddingVertical: 15,
@@ -257,12 +273,12 @@ const styles = StyleSheet.create({
     KeyBoardView:{
       flex:1,
     },
-    CombScissor:{
-      marginTop: 50,
+    Pillar:{
       marginLeft:50,
-      maxHeight:200,
-      maxWidth:300,
-      resizeMode:'center'
+      height:300,
+      width:300,
+      resizeMode:'stretch',
+      marginVertical:100
 
     },
     GoBackContainer: {

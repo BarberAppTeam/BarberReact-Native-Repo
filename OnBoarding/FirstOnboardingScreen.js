@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
-import { 
-  View, 
-  Text,
-  StyleSheet,
-  Image
- } from 'react-native';
- import {
-   TouchableOpacity
- } from 'react-native-gesture-handler';
+import { Image, StyleSheet, Text, View } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default class FistOnboarding extends Component {
   static navigationOptions = {
@@ -20,11 +13,13 @@ export default class FistOnboarding extends Component {
       <Image style={styles.hair_shaver} source = {
         require('./hair-shaver.png')}/>
       
-        <Text> Tonso lets you easily find and book appointments with local professionals. </Text>
+        <Text style = {styles.Description} > 
+        <Text style={styles.Tonso}> TONSO </Text> 
+        lets you easily find, book, pay for haircut appointments with local professionals. </Text>
 
         <TouchableOpacity style = {styles.Next}
         onPress = {() => this.props.navigation.navigate('Intro2')} >
-          <Text> Next </Text> 
+          <Text style={styles.NextText}> Next </Text> 
         </TouchableOpacity>
       </View>
     )
@@ -34,22 +29,46 @@ export default class FistOnboarding extends Component {
 const styles = StyleSheet.create({
  Next: {
    backgroundColor: '#DDDDDD',
-   opacity: 0.9,
-   marginBottom: 400,
-   fontSize: 24,
-   fontFamily: 'Farah',
-   paddingHorizontal: 100,
-   flexDirection: 'column',
-   justifyContent: 'space-around',
-   alignItems: 'center',
-   paddingVertical: 15,
-   marginTop: 25
+     fontSize: 16,
+     opacity:.5,
+     fontFamily: 'Avenir Next',
+     flexDirection: 'column',
+     justifyContent: 'space-around',
+     alignItems: 'center',
+     alignSelf: 'center',
+     alignContent: 'center',
+     color: 'black',
+     textAlign: 'center',
+     height: 50,
+     paddingVertical: 10,
+     paddingHorizontal: 95,
+     marginVertical: 85,
+     borderRadius:5
+ },
+ NextText:{
+  fontSize: 20,
+  fontWeight: '600',
  },
  hair_shaver: {
      maxWidth: 350,
      maxHeight: 350,
-     marginBottom: 100,
-     marginTop: 170,
+     marginBottom: 85,
+     marginTop: 100,
+     marginLeft: 30,
 
- }
+ },
+ Tonso: {
+   fontWeight: "bold",
+   color: '#5D9CEC',
+   lineHeight:25,
+   textAlign:'center',
+   }
+ ,
+ Description: {
+   textAlign: 'auto',
+   paddingHorizontal: 1,
+   marginVertical:20,
+   
+   fontSize: 18,
+}
 })

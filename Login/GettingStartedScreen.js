@@ -29,11 +29,11 @@ class GettingStartedScreen extends Component {
                     }
                     />
               
-                    <Text style={styles.Welcome}> Welcome To Tonso! </Text>
+                    <Text style={styles.Welcome}> WELCOME TO TONSO </Text>
                     <TouchableOpacity
                       style={styles.Next}
                       onPress={() => this.props.navigation.navigate('Intro')}> 
-                      <Text> Next </Text>
+                      <Text style={styles.NextText}> Next </Text>
                       </TouchableOpacity>
             </View>
         ); 
@@ -60,17 +60,24 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems:'center',
     paddingVertical: 15,
-    marginTop:25
+    marginTop:25,
+    borderRadius:5,
+
+  },
+  NextText: {
+    fontSize: 20,
+    fontWeight: '600',
+    opacity:.5,
   },
   Welcome:{
     textAlign: 'center', // <-- the magic
-    fontWeight: '500',
+    fontWeight: 'bold',
     fontFamily:'Avenir Next',
     /*Use Font.loadAsync if you would like to load in a custom font late on componentDidMount() {
                       Font.loadAsync({
                         'open-sans-bold': require('./assets/fonts/OpenSans-Bold.ttf'),
                       })};*/
-    fontSize: 36,
+    fontSize: 30,
     color:'#353b48',
 
   },

@@ -1,12 +1,8 @@
-import React, {Component} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Image
-} from 'react-native';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
+import React, { Component } from 'react';
+import { Image, StyleSheet, Text } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+
 
 export default class SecondOnboarding extends Component {
 
@@ -16,13 +12,15 @@ export default class SecondOnboarding extends Component {
 
   render() {
     return ( <KeyboardAwareScrollView>
-      <Image style={styles.Location} source = {require('./LocationMarker.png')}/>
-
-      <Text> Get the best barber Reccomendations around you! Barber will need to use your location services. </Text>
+      <Image style = {styles.Location}
+      source = {require('./images/Location.png')}/>
+      <Text style = {styles.Reccomendation}> 
+      Get the best barber reccomendations around you! 
+      <Text styles={styles.Tonso}> TONSO</Text> will need to use your location services. </Text>
 
       <TouchableOpacity style = {styles.EnableLocation}
       onPress = {() => this.props.navigation.navigate('')}>
-      <Text> Enable Location </Text>  
+      <Text style={styles.EnableLocationText}> Enable Location </Text>  
       </TouchableOpacity> 
 
        < TouchableOpacity style = {styles.NotNow}
@@ -37,27 +35,35 @@ export default class SecondOnboarding extends Component {
 
 const styles = StyleSheet.create({
   EnableLocation: {
-     backgroundColor: '#DDDDDD',
-       opacity: 0.9,
-       fontSize: 16,
-       fontFamily: 'Avenir Next',
+     backgroundColor: '#9AE1D3',
        flexDirection: 'column',
        justifyContent: 'space-around',
        alignItems: 'center',
        alignSelf: 'center',
-       alignContent: 'center',
        color: 'black',
        textAlign: 'center',
        height: 50,
        paddingVertical: 10,
-       paddingHorizontal: 90,
-       marginVertical: 80
-       
+       paddingHorizontal: 80,
+       borderRadius: 5,
+       marginTop: 75,
+       marginBottom: 10,
+  },
+   Tonso: {
+     fontWeight: 'bold',
+     color: '#5D9CEC',
+   },
+  EnableLocationText:{
+    fontWeight: '600',
+    fontSize: 20,
+    color: '#435e59',
+    lineHeight: 25,
+
   },
   NotNow: {
     backgroundColor: '#DDDDDD',
-    opacity: 0.9,
-    fontSize: 16,
+    fontSize: 18,
+    opacity:.5,
     fontFamily: 'Avenir Next',
     flexDirection: 'column',
     justifyContent: 'space-around',
@@ -69,12 +75,23 @@ const styles = StyleSheet.create({
     height: 50,
     paddingVertical: 10,
     paddingHorizontal: 95,
-    marginVertical:115
+    marginVertical:5,
+    borderRadius: 5
+  },
+  Reccomendation: {
+     textAlign: 'center',
+       paddingHorizontal: 15,
+       marginVertical: 20,
+       textAlignVertical: 'center',
+       lineHeight: 25,
+       fontSize: 17,
   },
   Location:{
-     maxWidth: 350,
-     maxHeight: 350,
-     marginTop: 170,
+    marginVertical:130,
+     marginLeft: 85,
+     marginRight: 150,
+     height:200,
+     width:200
   },
  
 })

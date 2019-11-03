@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@okta/okta-react": "^1.2.3",
+    "@okta/okta-react-native": "^1.2.1",
     "expo": "^35.0.0",
     "react": "16.8.3",
     "react-dom": "16.8.3",

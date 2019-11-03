@@ -6,6 +6,7 @@ import {
   Image,
 } from 'react-native';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
 export default class ThirdOnboarding extends Component {
 
@@ -14,21 +15,23 @@ export default class ThirdOnboarding extends Component {
   }
 
   render() {
-    return ( <View stye={styles.Container}>
-      <Image source = {require('./Memoji.png')}/>
+    return ( <KeyboardAwareScrollView stye={styles.Container}>
+      <Image style={styles.Memoji} source = {require('./Memoji.png')}/>
+      <Image style={styles.notificationsBox} source = {require('./images/notificationsBox.png')}/>
+      
 
-      <Text> Get reminders and notifications. Keep your appointments up to date. </Text>
+      <Text style={styles.Reminder}> Get reminders and notifications. Keep your appointments up to date. </Text>
 
       <TouchableOpacity style = {styles.Next}
       onPress = {() => this.props.navigation.navigate('Form')}>
-      <Text style = {styles.GetStarted}> Get Started </Text>  
+      <Text style={styles.GetStarted}> Get Started </Text>  
       
       
       </TouchableOpacity>  
 
   
       
-    </View>
+    </KeyboardAwareScrollView>
     )
   }
 }
@@ -43,28 +46,55 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
     marginBottom: 50
   },
+  Reminder:{
+    textAlign:'center',
+    paddingHorizontal: 50,
+    paddingVertical: 5,
+    marginTop: 20,
+    lineHeight:25,
+    fontSize:18
+
+  },
   GetStarted: {
-    backgroundColor: '#000000',
-      opacity: 0.9,
-      fontSize: 16,
-      fontFamily: 'Avenir Next',
-      flexDirection: 'column',
-      justifyContent: 'space-around',
+    paddingHorizontal: 20,
+      marginVertical: 20,
       alignItems: 'center',
       alignSelf:'center',
-      alignContent:'center',
-      textAlign:'center',
       color:'white',
-      height: 50,
-      paddingVertical: 10,
-      paddingHorizontal: 95,
-      marginVertical:115
+      fontSize: 18,
+      fontWeight:'bold',
+      opacity:9
+      
+    },
+    Next:{
+      backgroundColor: '#000000',
+        opacity: 0.9,
+        fontSize: 16,
+        fontFamily: 'Avenir Next',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        alignSelf: 'center',
+        color: 'white',
+        paddingHorizontal: 75,
+        marginVertical: 70,
+        borderRadius: 5,
     },
   Memoji:{
-    alignItems: 'center',
-      flexGrow: 1,
-      justifyContent: 'center'
-
+      justifyContent: 'center',
+      height:250,
+      width:250,
+      marginLeft:50,
+      marginVertical:35
+  },
+  notificationsBox:{
+    justifyContent: 'center',
+      height: 200,
+      width: 300,
+      resizeMode:'cover',
+      marginVertical: 5,
+      borderRadius:8,
+      marginLeft:40
   }
 
   /*GoBackContainer: {
