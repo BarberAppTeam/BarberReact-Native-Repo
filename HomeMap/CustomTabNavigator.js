@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { createBottomTabNavigator} from 'react-navigation';
 import Icon from 'react-native-vector-icons/Ionicons';
-import HomeMapStackScreen from '../';
-import ExploreStackScreen from './ExploreStackScreen';
-import ProfileStackScreen from './Screens/ProfileStackScreen';
-import NotificationStackScreen from './NotificationStackScreen';
+import HomeMapStackScreen from '../Screens/HomeMapStackScreen';
+import ExploreStackScreen from '../Screens/ExploreStackScreen';
+import ProfileStackScreen from '../Screens/ProfileStackScreen';
+import NotificationStackScreen from '../Screens/NotificationStackScreen';
 import { View, Text } from 'react-native';
 
 
 const ICON_SIZE = 30;
-const CustomTabBar = createBottomTabNavigator({
+const CustomTabNavigator = createBottomTabNavigator({
     ExploreStackScreen:{
         screen:ExploreStackScreen,
         navigationOptions:{
@@ -75,5 +75,5 @@ const CustomTabBar = createBottomTabNavigator({
         },
     });
 
-export default  CustomReactNavigator;
+export default  CustomTabNavigator;
 
