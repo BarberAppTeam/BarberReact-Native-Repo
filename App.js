@@ -6,7 +6,7 @@ import GettingStartedScreen from './Login/GettingStartedScreen'
 import FirstOnboarding from './OnBoarding/FirstOnboardingScreen'
 import SecondOnboarding from './OnBoarding/SecondOnboardingScreen';
 import ThirdOnboarding from './OnBoarding/ThirdOnboardingScreen';
-
+import CustomTabNavigator from './HomeMap/CustomTabNavigator';
 
 
 export default class App extends React.Component {
@@ -20,10 +20,10 @@ const AppNavigator = createStackNavigator({
   Intro:{screen: FirstOnboarding},
   Intro2:{screen: SecondOnboarding},
   Intro3:{screen: ThirdOnboarding},
-  Form: {
-    screen: LoginForm
-  },
-  },
+  Form: {screen: LoginForm},
+  HomeNav:{screen:CustomTabNavigator},
+  
+},
 { 
   initialRouteNameParams: 'GetStarted'
 

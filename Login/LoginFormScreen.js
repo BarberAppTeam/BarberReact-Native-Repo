@@ -1,40 +1,42 @@
 import React, { Component } from 'react';
-import { View, 
-    Text, 
-    TextInput, 
-    StyleSheet,
-    TouchableOpacity,
-    StatusBar,
-    Button,
-    Image
-} from 'react-native';
-import {
-  KeyboardAwareScrollView
-} from 'react-native-keyboard-aware-scroll-view';
-//Add StormPath dependencies Here
-//Dependencies for User Authentication:
+import { Image, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+// import {GoogleSignin} from '@react-native-community/google-signin';
+//import {firebase} from '@react-native-firebase/auth';
+//import {Auth} from './FireBase';
 
+/*let user;
+componentDidMount(async () =>{
+  user = await Auth.currentUser;
+} )*/
 
-// ClientID: 0oa1k8ligc7pzlVuF357
-// Org URL: https://dev-835108.okta.com
+/*const {accessToken,idToken} = await GoogleSignin.signIn();
+const credential = firebase.auth.GoogleAuthProvider.credential(idToken, accessToken);
+await firebase.auth().signInWithCredential(credential);*/
 
-
-/*
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Security, ImplicitCallback } from '@okta/okta-react';
-import Home from './Home';
-*/
-
-// ClientID: 0oa1k8ligc7pzlVuF357
-// Org URL: https://dev-835108.okta.com
 
 export default class LoginForm extends Component {
  
   static navigationOptions = {
     header: null
   }
+
+
+// This code below is for the Google Sign In button
   render() {
+/*async function bootstrap() {
+  await GoogleSignin.configure({
+    scopes: ['https://www.googleapis.com/auth/drive.readonly'],
+    webClientId: '632469254182-uei9ta0gadqincovpsoj37prqtp0e78u.apps.googleusercontent.com', // required
+  });
+}*/
+/*<GoogleSigninButton
+              style={styles.GoogleSignin}
+              onPress={this._signIn}
+              disabled={this.state.isSigninInProgress} />*/
+
     return (
+      
 
           <KeyboardAwareScrollView >
             <Image source={require('./barbershop.png')}style = {styles.Pillar}/>
@@ -74,6 +76,7 @@ export default class LoginForm extends Component {
               onPress={()=> this.props.navigation.navigate('Home')}>
               <Text style={styles.LoginText}>Log In </Text>
           </TouchableOpacity>
+           
 
           <TouchableOpacity
            style={styles.RegisterContainer}
@@ -95,76 +98,6 @@ export default class LoginForm extends Component {
   }
 }
 
-/*
-//User Authentication:
-
-/*const config = {
-  issuer: 'https://${yourOktaDomain}/oauth2/default',
-  redirectUri: window.location.origin + '/implicit/callback',
-  clientId: '{clientId}',
-  pkce: true
-}
-
-//User Authentication
-
-class App extends Component {
-  render() {
-    return (
-      <Router>
-        <Security {...config}>
-          <Route path='/' exact={true} component={Home}/>
-          <Route path='/implicit/callback' component={ImplicitCallback}/>
-        </Security>
-      </Router>
-    );
-  }
-}
-*/ 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-/*
-    state ={
-        username: '',
-            password:'',
-            isLoggingIn: false,
-            message: ''
-        }
-
-    _userLogin =() =>{
-        this.setState({isLogginIn:true, message:''});
-
-    var params ={
-        username:this.state.username,
-        password:this.state.password,
-        grant_type:'password'
-    };
-
-    var formBody = [];
-    for (var property in params) {
-      var encodedKey = encodeURIComponent(property);
-      var encodedValue = encodeURIComponent(params[property]);
-      formBody.push(encodedKey + "=" + encodedValue);
-    }
-    formBody = formBody.join("&");
-    
-    var proceed = false;
-        fetch("https://”+Environment.CLIENT_API+”/oauth/token", {
-            method: "POST", 
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: formBody
-          })
-          .then((response) => response.json())
-          .then((response) => {
-              if (response.error) this.setState({message: response.message});
-              else proceed = true;
-          })
-          .then(() => {
-              this.setState({isLoggingIn: false})
-              if (proceed) this.props.onLoginPress();
-          })
-          .done();
-*/
 
 const styles = StyleSheet.create({
     container:{
@@ -173,6 +106,13 @@ const styles = StyleSheet.create({
         flex:1,
         paddingHorizontal: 5,
         marginBottom:50
+    },
+    GoogleSignin:{
+    width: 192, 
+    height: 48, 
+    size:GoogleSigninButton.Size.Wide,
+    color: GoogleSigninButton.Color.Dark
+    
     },
     Username: {
         height: 40,
@@ -297,3 +237,5 @@ const styles = StyleSheet.create({
       textAlign: 'center'}
     
 })
+
+
