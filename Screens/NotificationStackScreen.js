@@ -1,10 +1,10 @@
-import {createStackNavigator} from 'react-navigation';
-import NotificationStackScreen from './NotificationStackScreen';
+import {createStackNavigator} from 'react-navigation-stack';
+import Notifications from '../containers/Notifications';
 
-// Profile index to   
-const NotificationStackScreen= createStackNavigator({
-    NotificationStackScreen: {
-        screen:NotificationStackScreen,
+// index to   
+const NotificationStack= createStackNavigator({
+    Notifications: {
+        screen:Notifications,
         navigationOptions:{
         header:null,
         
@@ -13,4 +13,4 @@ const NotificationStackScreen= createStackNavigator({
     }
 });
 
-export default NotificationStackScreen;
+export default NotificationStack;

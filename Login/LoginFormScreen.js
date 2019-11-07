@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Image, StatusBar, StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import HomeNav from '../screens/CustomTabNavigatorScreen'
 // import {GoogleSignin} from '@react-native-community/google-signin';
 //import {firebase} from '@react-native-firebase/auth';
 //import {Auth} from './FireBase';
@@ -73,7 +74,7 @@ export default class LoginForm extends Component {
         
           <TouchableOpacity
               style={styles.SignInContainer}
-              onPress={()=> this.props.navigation.navigate('Home')}>
+              onPress={()=> this.props.navigation.navigate('HomeNav')}>
               <Text style={styles.LoginText}>Log In </Text>
           </TouchableOpacity>
            
@@ -106,14 +107,14 @@ const styles = StyleSheet.create({
         flex:1,
         paddingHorizontal: 5,
         marginBottom:50
-    },
-    GoogleSignin:{
+    }
+    /*GoogleSignin:{
     width: 192, 
     height: 48, 
     size:GoogleSigninButton.Size.Wide,
     color: GoogleSigninButton.Color.Dark
     
-    },
+    }*/,
     Username: {
         height: 40,
         backgroundColor: '#FFFFFF',

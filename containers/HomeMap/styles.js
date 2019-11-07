@@ -1,11 +1,10 @@
 import { StyleSheet,Dimensions } from 'react-native';
+import React from 'React';
 
 
-const {width, height} = Dimensions.get('window');l
+const {width, height} = Dimensions.get('window');
 const styles= StyleSheet.create({
     mainContainerView:{
-        weight,
-        height,
         backgroundColor:'#F5F5F5'
     },
     mainText:{
