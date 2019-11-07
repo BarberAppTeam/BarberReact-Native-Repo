@@ -1,5 +1,5 @@
-import {createStackNavigator} from 'react-navigation';
-import Profile from '../Profile/Profile';
+import {createStackNavigator} from 'react-navigation-stack';
+import Profile from '../containers/Profile';
 
 // Profile index to   
 const ProfileStack= createStackNavigator({

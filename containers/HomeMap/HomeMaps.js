@@ -1,6 +1,5 @@
-//NativeMaps Code Here
-/*
-
+import React, { Component } from 'react';
+import styles from './styles';
 import React from 'react';
 import {
     Stylesheet,
@@ -9,6 +8,31 @@ import {
     TouchableOpactity,
     Platform
 } from 'react-native';
+
+export default class HomeMaps extends Component {
+
+     static navigationOptions = {
+         header: null
+     }
+
+
+  render() {
+    return (
+      <View style={styles.mainContainerView}>
+        <Text style={styles.mainText}> HomeMaps </Text>
+      </View>
+    );
+  }
+}
+
+
+
+
+
+//NativeMaps Code Here
+/*
+
+
 
 import MapView, {
     Marker,

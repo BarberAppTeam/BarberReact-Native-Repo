@@ -1,10 +1,10 @@
-import {createStackNavigator} from 'react-navigation';
-import HomeMapStackScreen from './HomeMapStackScreen';
+import {createStackNavigator} from 'react-navigation-stack';
+import HomeMaps from '../containers/HomeMap';
 
-// Profile index to   
-const HomeMapStackScreen= createStackNavigator({
-    HomeMapStackScreen: {
-        screen:HomeMapStackScreen,
+//index to   
+const HomeMapStack= createStackNavigator({
+    HomeMaps: {
+        screen:HomeMaps,
         navigationOptions:{
         header:null,
         }
@@ -12,4 +12,4 @@ const HomeMapStackScreen= createStackNavigator({
     }
 });
 
-export default HomeMapStackScreen;
+export default HomeMapStack;

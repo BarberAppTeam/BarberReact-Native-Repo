@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { createStackNavigator} from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
 import LoginForm from './Login/LoginFormScreen';
@@ -6,7 +6,7 @@ import GettingStartedScreen from './Login/GettingStartedScreen'
 import FirstOnboarding from './OnBoarding/FirstOnboardingScreen'
 import SecondOnboarding from './OnBoarding/SecondOnboardingScreen';
 import ThirdOnboarding from './OnBoarding/ThirdOnboardingScreen';
-import CustomTabNavigator from './HomeMap/CustomTabNavigator';
+import CustomTabBar from './screens/CustomTabNavigatorScreen';
 
 
 export default class App extends React.Component {
@@ -21,7 +21,7 @@ const AppNavigator = createStackNavigator({
   Intro2:{screen: SecondOnboarding},
   Intro3:{screen: ThirdOnboarding},
   Form: {screen: LoginForm},
-  HomeNav:{screen:CustomTabNavigator},
+  HomeNav:{screen:CustomTabBar},
   
 },
 { 

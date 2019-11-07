@@ -1,56 +1,58 @@
-import React, { Component } from 'react';
-import { createBottomTabNavigator} from 'react-navigation';
+import * as React from 'react';
+import { createBottomTabNavigator} from 'react-navigation-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
-import HomeMapStackScreen from '../Screens/HomeMapStackScreen';
-import ExploreStackScreen from '../Screens/ExploreStackScreen';
-import ProfileStackScreen from '../Screens/ProfileStackScreen';
-import NotificationStackScreen from '../Screens/NotificationStackScreen';
+import HomeMapStackScreen from './HomeMapStackScreen';
+import ExploreStackScreen from './ExploreStackScreen';
+import ProfileStackScreen from './ProfileStackScreen';
+import NotificationStackScreen from './NotificationStackScreen';
 import { View, Text } from 'react-native';
 
 
 const ICON_SIZE = 30;
-const CustomTabNavigator = createBottomTabNavigator({
-    ExploreStackScreen:{
+const CustomTabBar = createBottomTabNavigator({
+
+    
+    Explore:{
         screen:ExploreStackScreen,
         navigationOptions:{
             header:null,
             tabBarlabel:'Explore',
             tabBarIcon:({tintColor}) => (
-                <ion-icon name="home" size={ICON_SIZE}/>
+                <Icon name="ios-home" size={ICON_SIZE}/>
             )
         }
     },
     
-    HomeMapStackScreen:{
+    Map:{
         screen:HomeMapStackScreen,
         navigationOptions:{
             header:null,
             tabBarlabel:'Barbers',
             tabBarIcon:({tintColor}) => (
-                <ion-icon name = "pin" color={tintColor} size={ICON_SIZE}/>
+                <Icon name = "ios-compass" color={tintColor} size={ICON_SIZE}/>
             )
 
         }
 
     },
-    NotificationStackScreen:{
+    Notifications:{
         screen:NotificationStackScreen,
         navigationOptions:{
             header:null,
             tabBarlabel:'Notifications',
             tabBarIcon:({tintColor}) => (
-                <ion-icon name = "notifications-outline" color={tintColor} size={ICON_SIZE}/>
+                <Icon name = "ios-notifications" color={tintColor} size={ICON_SIZE}/>
             )
         }
 
     },
-     ProfileStackScreen: {
+     Profile: {
         screen: ProfileStackScreen,
         navigationOptions: {
             header:null,
             tabBarlabel:'Profile',
             tabBarIcon: ({ tintColor}) => (
-                <Icon name='contact' size={ICON_SIZE} color={tintColor}/>
+                <Icon name='md-contact' size={ICON_SIZE} color={tintColor}/>
             )
         }
     },
@@ -75,5 +77,5 @@ const CustomTabNavigator = createBottomTabNavigator({
         },
     });
 
-export default  CustomTabNavigator;
+export default  CustomTabBar;
 

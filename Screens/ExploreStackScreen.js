@@ -1,8 +1,8 @@
-import {createStackNavigator} from 'react-navigation';
-import ExploreScreen from '../ExploreScreen';
+import {createStackNavigator} from 'react-navigation-stack';
+import ExploreScreen from '../containers/ExploreScreen';
 
 // Profile index to   
-const ExploreStackScreen= createStackNavigator({
+const ExploreStack= createStackNavigator({
     ExploreScreen: {
         screen:ExploreScreen,
         navigationOptions:{
@@ -12,4 +12,4 @@ const ExploreStackScreen= createStackNavigator({
     }
 });
 
-export default ExploreStackScreen;
+export default ExploreStack;
