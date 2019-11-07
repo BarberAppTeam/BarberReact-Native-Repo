@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styles from './styles';
-import React from 'react';
 import {
     Stylesheet,
     View,
