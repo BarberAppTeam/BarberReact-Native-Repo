@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
  ,
  Description: {
    textAlign: 'auto',
-   paddingHorizontal: 1,
+   paddingHorizontal: 7,
    marginVertical:20,
    
    fontSize: 18,

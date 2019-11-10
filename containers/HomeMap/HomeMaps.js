@@ -1,29 +1,93 @@
 import React, { Component } from 'react';
 import styles from './styles';
-import {
-    Stylesheet,
-    View,
-    Text,
-    TouchableOpactity,
-    Platform
-} from 'react-native';
+import {Stylesheet,View,Text,TouchableOpactity,Platform, Button} from 'react-native';
+import MapView from 'react-native-maps';
+import { Card } from "@paraboly/react-native-card";
+
+
+
+
 
 export default class HomeMaps extends Component {
 
      static navigationOptions = {
-         header: null
+       header: null
      }
 
 
   render() {
     return (
       <View style={styles.mainContainerView}>
-        <Text style={styles.mainText}> HomeMaps </Text>
+        <Text style={styles.HeaderText}> Find Barbers </Text>
+        <Text style={styles.HeaderText}> Near You </Text>
+      < MapView style = {styles.MapView}
+      region = {
+          {
+              // provider = {PROVIDER_GOOGLE},
+              latitude: 42.882004,
+              longitude: 74.582748,
+              latitudeDelta: 0.0922,
+              longitudeDelta: 0.0421
+          }
+      }
+      showsUserLocation = {true}
+      />
+
+            <Card
+        title="Barber Name"
+        iconName="home"
+        defaultTitle=""
+        iconType="Entypo"
+        defaultContent=""
+        onPress={() => {}}
+        topRightText="Rating here"
+        bottomRightText="pull distance info here"
+        content="Barber brief description goes here"
+        
+        />
+      
+      
       </View>
     );
   }
 }
 
+
+
+
+
+
+
+
+/*const getCurrentLocation = () => {
+         return new Promise((resolve, reject) => {
+             navigator.geolocation.getCurrentPosition(position => resolve(position), e => reject(e));
+         });
+     };
+
+     class MyMap extends Components {
+         constructor(props) {
+             super(props);
+             this.state = {
+                 region: defaultRegion,
+             };
+         }
+         componentDidMount() {
+             return getCurrentLocation().then(position => {
+                 if (position) {
+                     this.setState({
+                         region: {
+                             latitude: position.coords.latitude,
+                             longitude: position.coords.longitude,
+                             latitudeDelta: 0.003,
+                             longitudeDelta: 0.003,
+                         },
+                     });
+                 }
+             });
+         }
+     }
+*/
 
 //TEST
 

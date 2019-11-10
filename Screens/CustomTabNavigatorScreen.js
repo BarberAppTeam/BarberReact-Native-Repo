@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { createBottomTabNavigator} from 'react-navigation-tabs';
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icons from '../node_modules/react-native-ionicons';
 import HomeMapStackScreen from './HomeMapStackScreen';
 import ExploreStackScreen from './ExploreStackScreen';
 import ProfileStackScreen from './ProfileStackScreen';
@@ -12,28 +12,27 @@ const ICON_SIZE = 30;
 const CustomTabBar = createBottomTabNavigator({
 
     
+    FindBarber:{
+        screen:HomeMapStackScreen,
+        navigationOptions:{
+            header:null,
+            tabBarlabel:'Map',
+            tabBarIcon:({tintColor}) => (
+                <Icons name = "ios-compass" color={tintColor} size={ICON_SIZE}/>
+            )
+
+        }
+
+    },
     Explore:{
         screen:ExploreStackScreen,
         navigationOptions:{
             header:null,
             tabBarlabel:'Explore',
             tabBarIcon:({tintColor}) => (
-                <Icon name="ios-home" size={ICON_SIZE}/>
+                <Icons name="home"  color={tintColor} size={ICON_SIZE}/>
             )
         }
-    },
-    
-    Map:{
-        screen:HomeMapStackScreen,
-        navigationOptions:{
-            header:null,
-            tabBarlabel:'Barbers',
-            tabBarIcon:({tintColor}) => (
-                <Icon name = "ios-compass" color={tintColor} size={ICON_SIZE}/>
-            )
-
-        }
-
     },
     Notifications:{
         screen:NotificationStackScreen,
@@ -41,7 +40,7 @@ const CustomTabBar = createBottomTabNavigator({
             header:null,
             tabBarlabel:'Notifications',
             tabBarIcon:({tintColor}) => (
-                <Icon name = "ios-notifications" color={tintColor} size={ICON_SIZE}/>
+                <Icons name = "ios-notifications" color={tintColor} size={ICON_SIZE}/>
             )
         }
 
@@ -52,7 +51,7 @@ const CustomTabBar = createBottomTabNavigator({
             header:null,
             tabBarlabel:'Profile',
             tabBarIcon: ({ tintColor}) => (
-                <Icon name='md-contact' size={ICON_SIZE} color={tintColor}/>
+                <Icons name='md-contact' size={ICON_SIZE} color={tintColor}/>
             )
         }
     },

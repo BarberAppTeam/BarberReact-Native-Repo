@@ -116,22 +116,22 @@ const styles = StyleSheet.create({
     
     }*/,
     Username: {
-        height: 40,
+        height: 50,
         backgroundColor: '#FFFFFF',
         marginBottom: 5,
         color: '#000000',
-        borderBottomWidth: .5,
+        borderBottomWidth: .7,
         marginLeft:65,
         marginRight:65,
         marginVertical:5
 
       },
       Password: {
-        height: 40,
+        height: 50,
         backgroundColor: '#FFFFFF',
         marginBottom: 5,
         color: '#000000',
-        borderBottomWidth: .5,
+        borderBottomWidth: .7,
         marginLeft:65,
         marginRight:65
 
@@ -164,8 +164,8 @@ const styles = StyleSheet.create({
           color: 'black',
           textAlign: 'center',
           paddingHorizontal: 96,
-          height:35,
-          marginVertical: 5,
+          height:50,
+          marginVertical: 10,
           borderRadius: 5
       },
       RegisterContainer: {
@@ -183,7 +183,8 @@ const styles = StyleSheet.create({
           paddingVertical: 10,
           paddingHorizontal: 90       ,
           marginVertical: 5,
-          borderRadius: 5
+          borderRadius: 5,
+          height:50
       },
       RegisterText:{
         color:'white',
@@ -219,7 +220,7 @@ const styles = StyleSheet.create({
       height:300,
       width:300,
       resizeMode:'stretch',
-      marginVertical:100
+      marginVertical:80
 
     },
     GoBackContainer: {

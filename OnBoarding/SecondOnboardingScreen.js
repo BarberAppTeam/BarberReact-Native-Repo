@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
      textAlign: 'center',
        paddingHorizontal: 15,
        marginVertical: 20,
+       marginHorizontal:7,
        textAlignVertical: 'center',
        lineHeight: 25,
        fontSize: 17,
