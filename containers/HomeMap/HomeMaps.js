@@ -1,54 +1,107 @@
 import React, { Component } from 'react';
 import styles from './styles';
-import {Stylesheet,View,Text,TouchableOpactity,Platform, Button} from 'react-native';
+import {Stylesheet,View,Text,TouchableOpacity,Platform, Button, Alert} from 'react-native';
+import Permissions from 'react-native-permissions';
 import MapView from 'react-native-maps';
-import { Card } from "@paraboly/react-native-card";
+import { Card, SimpleCard } from "@paraboly/react-native-card";
 
 
 
-
+const getCurrentLocation = () => {
+    return new Promise((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(position => resolve(position), e => reject(e));
+    });
+};
+const Region = {
+    latitude: 37.78825,
+    longitude: -122.4324,
+    latitudeDelta: 0.0922,
+    longitudeDelta: 0.0421,
+}
 
 export default class HomeMaps extends Component {
 
-     static navigationOptions = {
-       header: null
-     }
 
+     /* state = {
+    search: '',
+  };
+
+  updateSearch = search => {
+    this.setState({ search });
+  };
+
+*/
+ constructor(props) {
+    super(props);
+    this.state = {Region};
+    console.log(this.props)
+    }
+
+
+componentDidMount() {
+        return getCurrentLocation().then(position => {
+                    if (position) { 
+                        this.setState({Region});
+                    }
+                });
+            }
+
+            findCoordinates = () => {
+                navigator.geolocation.getCurrentPosition(
+                    position => {
+                        const location = JSON.stringify(position);
+                        this.setState({location});
+                    },
+                    error => Alert.alert(error.message),
+                    {enableHighAccuracy: true, timeout:20000, maximumAge:1000}
+                );
+            };
 
   render() {
+    
+
     return (
       <View style={styles.mainContainerView}>
-        <Text style={styles.HeaderText}> Find Barbers </Text>
-        <Text style={styles.HeaderText}> Near You </Text>
-      < MapView style = {styles.MapView}
-      region = {
-          {
-              // provider = {PROVIDER_GOOGLE},
+        
+      <MapView style = {styles.MapView}
+        showsUserLocation
+        showsMyLocationButton={true}
+        showsBuildings={true}
+        zoomEnabled={true}
+        onMapReady={() => {
+        Permissions.request(
+        Permissions.PERMISSIONS.IOS.LOCATION_WHEN_IN_USE
+     ).then(granted => {
+      alert(granted) // just to ensure that permissions were granted
+    });
+  }}
+
+
+      initialRegion={
+          {   
+              
               latitude: 42.882004,
               longitude: 74.582748,
               latitudeDelta: 0.0922,
               longitudeDelta: 0.0421
           }
-      }
-      showsUserLocation = {true}
-      />
+      }>
 
-            <Card
-        title="Barber Name"
-        iconName="home"
-        defaultTitle=""
-        iconType="Entypo"
-        defaultContent=""
-        onPress={() => {}}
-        topRightText="Rating here"
-        bottomRightText="pull distance info here"
-        content="Barber brief description goes here"
+
+        <Text style = {
+            styles.HeaderText
+        }>Find Barbers <Text> Near You </Text>
+         </Text >
         
-        />
-      
+       
+       <TouchableOpacity onPress={this.findCoordinates}>
+           <Text style={styles.welcome}>Location: {this.state.location}</Text>
+       </TouchableOpacity>
+        
+      </MapView>
       
       </View>
-    );
+    )
   }
 }
 
@@ -57,158 +110,3 @@ export default class HomeMaps extends Component {
 
 
 
-
-
-/*const getCurrentLocation = () => {
-         return new Promise((resolve, reject) => {
-             navigator.geolocation.getCurrentPosition(position => resolve(position), e => reject(e));
-         });
-     };
-
-     class MyMap extends Components {
-         constructor(props) {
-             super(props);
-             this.state = {
-                 region: defaultRegion,
-             };
-         }
-         componentDidMount() {
-             return getCurrentLocation().then(position => {
-                 if (position) {
-                     this.setState({
-                         region: {
-                             latitude: position.coords.latitude,
-                             longitude: position.coords.longitude,
-                             latitudeDelta: 0.003,
-                             longitudeDelta: 0.003,
-                         },
-                     });
-                 }
-             });
-         }
-     }
-*/
-
-//TEST
-
-
-//NativeMaps Code Here
-/*
-
-
-
-import MapView, {
-    Marker,
-    AnimatedRegion,
-    Polyline,
-    Provider_Google
-
-} from 'react-native-maps';
-import haversine from 'haversine';
-
-
-// Animated region will help animate markers when user location updates
-//Most of these items listed in this.state will be used later in the app
-contructor(props); {
-    super(props);
-
-    this.state ={
-        latitude: LATITUDE,
-        longitude: LONGITUDE,
-        routeCoordinates:  [],
-        distanceTravelled: 0,
-        prevLatLng: {},
-        coordinate: new AnimatedRegion({
-            latitude:LATITUDE,
-            longitude: LONGITUDE
-        })
-    };
-
-}
-
-
-// getting the location cordinates everytime the user moves using the watchPosition method
-componentDidMount(); {
-    this.watchID = navigator.geolocation.watchPosition(
-        position => {
-            const { coordinate, routeCoordinates,distanceTravelled } =
-        this.state;
-        const { latitude, longitude } = position.coords;
-
-        const newCoordinate = {
-            latitude,
-            longitude
-        };
-
-
-
-//optional to keep - Calculating the distance traveled, storing the distance traveled by the user
-calcDistance = newLatLng => {
-    const { prevLatLng } = this.state;
-    return haversine(prevLatLng, newLatLng) || 0;
-};
-
-getMapRegion = () => ({
-    latitude: this.state.latitude,
-    longitude: this.state.longitude,
-    latitudeDelta: LATITUDE_DELTA,
-    longitudeDelta: LONGITUDE_DELTA
-});
-
-// newCoordinate stores updated coodinates received from position.coords..
-// Which then allows us to animate the marker to the new coordinates
-        if (Platform.OS === "ios"){
-            if (this.marker) {
-                this.marker._component.animateMarkerToCoordinate(
-                    newCoordinate,
-                    500
-                );
-               }       
-              }
-            else {
-                coordinate.timing(newCoordinate).start();
-            }
-// updating initial states...
-            this.setState({
-                latitude,
-                longitude,
-                routeCoordinates: routeCoordinates.concat([newCoordinate]),
-                distanceTravelled:
-                distanceTravelled + this.calcDistance(newCoordinate),
-                preLatLng: newCoordinate
-            });
-           },
-           error => console.log(error),
-           {enableHighAccuracy:true, timeout: 20000, maximumAge: 1000 }
-    );
-}
-
-//Rendering everthing on map
-//Polyline draws the path when the user moves
-//Polyline has acoordinate props which accept an array of coordinates which we can get from our routeCoordinates
-//MarkerAnimated shows the marker at the user current position
-<MapView
-    style={styles.map}
-    showUserLocation
-    followUserLocation
-    loadingEnabled
-    region={this.getMapRegion()}
-    >
-    
-    <Polyline coordinates={this.state.routeCoordinates} strokeWidth=
-    {3} />
-    <Marker.Animated
-    ref={marker => {
-        this.marker =marker;
-    }}
-    coordinate={this.state.coordinate}
-    />
-    </MapView>
-
-<View style={styles.buttonContainer}>
-    <TouchableOpactity style={[styles.bubble, styles.button]}>
-        <Text style={styles.bottomBarContent}>
-            {parseFloat(this.state.distanceTravelled).toFixed(2)} mi
-        </Text>
-    </TouchableOpactity>
-</View>*/

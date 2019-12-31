@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { createBottomTabNavigator} from 'react-navigation-tabs';
-import Icons from '../node_modules/react-native-ionicons';
 import HomeMapStackScreen from './HomeMapStackScreen';
 import ExploreStackScreen from './ExploreStackScreen';
 import ProfileStackScreen from './ProfileStackScreen';
@@ -8,7 +7,7 @@ import NotificationStackScreen from './NotificationStackScreen';
 import { View, Text } from 'react-native';
 
 
-const ICON_SIZE = 30;
+const ICON_SIZE = 10;
 const CustomTabBar = createBottomTabNavigator({
 
     
@@ -17,9 +16,9 @@ const CustomTabBar = createBottomTabNavigator({
         navigationOptions:{
             header:null,
             tabBarlabel:'Map',
-            tabBarIcon:({tintColor}) => (
+            /*tabBarIcon:({tintColor}) => (
                 <Icons name = "ios-compass" color={tintColor} size={ICON_SIZE}/>
-            )
+            )*/
 
         }
 
@@ -29,9 +28,9 @@ const CustomTabBar = createBottomTabNavigator({
         navigationOptions:{
             header:null,
             tabBarlabel:'Explore',
-            tabBarIcon:({tintColor}) => (
+            /*tabBarIcon:({tintColor}) => (
                 <Icons name="home"  color={tintColor} size={ICON_SIZE}/>
-            )
+            )*/
         }
     },
     Notifications:{
@@ -39,9 +38,9 @@ const CustomTabBar = createBottomTabNavigator({
         navigationOptions:{
             header:null,
             tabBarlabel:'Notifications',
-            tabBarIcon:({tintColor}) => (
+           /* tabBarIcon:({tintColor}) => (
                 <Icons name = "ios-notifications" color={tintColor} size={ICON_SIZE}/>
-            )
+            )*/
         }
 
     },
@@ -50,13 +49,17 @@ const CustomTabBar = createBottomTabNavigator({
         navigationOptions: {
             header:null,
             tabBarlabel:'Profile',
-            tabBarIcon: ({ tintColor}) => (
+            /*tabBarIcon: ({ tintColor}) => (
                 <Icons name='md-contact' size={ICON_SIZE} color={tintColor}/>
-            )
+            )*/
         }
     },
     
 }, 
+{
+    // see next line
+    headerMode: 'none',
+},
     {
         animationEnabled:false,
         swipeEnabled:false,
@@ -73,6 +76,7 @@ const CustomTabBar = createBottomTabNavigator({
             style: {
                 backgroundColor: 'rgba(215,215,215,0.1',
             },
+
         },
     });
 

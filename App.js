@@ -10,6 +10,7 @@ import CustomTabBar from './screens/CustomTabNavigatorScreen';
 
 
 export default class App extends React.Component {
+  
   render(){
     return <AppContainer/>;
     } 
@@ -23,6 +24,10 @@ const AppNavigator = createStackNavigator({
   Form: {screen: LoginForm},
   HomeNav:{screen:CustomTabBar},
   
+},
+{
+  // see next line
+  headerMode: 'none',
 },
 { 
   initialRouteNameParams: 'GetStarted'

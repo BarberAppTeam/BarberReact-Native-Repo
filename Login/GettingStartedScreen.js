@@ -29,7 +29,7 @@ class GettingStartedScreen extends Component {
                     }
                     />
               
-                    <Text style={styles.Welcome}> WELCOME TO TONSO </Text>
+                    <Text style={styles.Welcome}> WELCOME TO NEAT </Text>
                     <TouchableOpacity
                       style={styles.Next}
                       onPress={() => this.props.navigation.navigate('Intro')}> 

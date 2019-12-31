@@ -14,7 +14,7 @@ export default class FistOnboarding extends Component {
         require('./hair-shaver.png')}/>
       
         <Text style = {styles.Description} > 
-        <Text style={styles.Tonso}> TONSO </Text> 
+        <Text style={styles.Tonso}> NEAT </Text> 
         lets you easily find, book, pay for haircut appointments with local professionals. </Text>
 
         <TouchableOpacity style = {styles.Next}

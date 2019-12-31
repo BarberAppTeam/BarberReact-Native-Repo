@@ -16,7 +16,7 @@ export default class SecondOnboarding extends Component {
       source = {require('./images/Location.png')}/>
       <Text style = {styles.Reccomendation}> 
       Get the best barber reccomendations around you! 
-      <Text styles={styles.Tonso}> TONSO</Text> will need to use your location services. </Text>
+      <Text styles={styles.Tonso}> NEAT</Text> will need to use your location services. </Text>
 
       <TouchableOpacity style = {styles.EnableLocation}
       onPress = {() => this.props.navigation.navigate('')}>

@@ -1,0 +1,1208 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0583966BE7D74665A60386CB /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C67B9B6C1CE548ABAEC3BB2D /* libRNVectorIcons.a */; };
+		0B6570A8933149B9B992FD48 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C5BB93F1355487DAF3EAF5E /* FontAwesome5_Brands.ttf */; };
+		1F428793239E01A200078220 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F428792239E01A200078220 /* AppDelegate.swift */; };
+		1F428795239E01A200078220 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F428794239E01A200078220 /* SceneDelegate.swift */; };
+		1F428797239E01A200078220 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F428796239E01A200078220 /* ContentView.swift */; };
+		1F428799239E01A400078220 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F428798239E01A400078220 /* Assets.xcassets */; };
+		1F42879C239E01A400078220 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F42879B239E01A400078220 /* Preview Assets.xcassets */; };
+		1F42879F239E01A400078220 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F42879D239E01A400078220 /* LaunchScreen.storyboard */; };
+		1F4287AA239E01A400078220 /* NeatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4287A9239E01A400078220 /* NeatTests.swift */; };
+		1F4287B5239E01A400078220 /* NeatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4287B4239E01A400078220 /* NeatUITests.swift */; };
+		286F34A4E5068EE4DD5C2CE9 /* Pods_NeatTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB0EEF504550591B2837C28 /* Pods_NeatTests.framework */; };
+		4599257D098C43918D82F2DB /* libAirMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F5810225B6424C1D93DF0497 /* libAirMaps.a */; };
+		467F655103EC4011A44126D7 /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F568FC03C4BC47D8940E68C7 /* Foundation.ttf */; };
+		4CC14A85DDF3495D85EF7530 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D257E84E37F945D2B8FBBCE3 /* SimpleLineIcons.ttf */; };
+		4DEC75DFE3354104AD021077 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B59B82E5E5F94539B3430095 /* Feather.ttf */; };
+		5576F0665F0F43E0B1EAB0DC /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3183CF9AF41C4114B44470E3 /* EvilIcons.ttf */; };
+		57BC387669FC4B22A8E46C4F /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2196524C402247BC8E9CDC95 /* Ionicons.ttf */; };
+		627F7496EA3E4F19B7D8D12F /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8CF0F3E29AAB4892931612D0 /* FontAwesome.ttf */; };
+		70D11122DB0D6681891A236A /* Pods_Neat_NeatUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 731132FD88D1AC33935A4316 /* Pods_Neat_NeatUITests.framework */; };
+		779C74F758D44408962D2F00 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5891531ED0A54E08923E52B6 /* FontAwesome5_Regular.ttf */; };
+		7C8FF38957DB4E8FB9099B58 /* libRNReactNativeLocationSwitch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AB6C1EDF1FC4DA7A32374F0 /* libRNReactNativeLocationSwitch.a */; };
+		7F994E87844D416EB90FE9D7 /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A2225439F8A442998395BEE7 /* AntDesign.ttf */; };
+		7FAFFADA82EC484D8BADFC2C /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 99C50613F9AB48E1BB4D4339 /* MaterialIcons.ttf */; };
+		9CD755FC111946868B250028 /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 071AEF41999645738585D754 /* Fontisto.ttf */; };
+		A29031799FCB417AA8E2859F /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 75EF79316B474C21B1F8164D /* Octicons.ttf */; };
+		D3684FDC259340B589BD77B3 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BEC121A775CD497E85EB1427 /* FontAwesome5_Solid.ttf */; };
+		D714B5D71ED74D318D359A6C /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A83B09D178654DBDA3EDEBDD /* MaterialCommunityIcons.ttf */; };
+		DFA12B003DE04B41A58FC77F /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 51AB31562E584F66AEB2E93A /* Entypo.ttf */; };
+		EB9EE66CD0C07609BF307E73 /* Pods_Neat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8140C0A634DF16EB56C2C11 /* Pods_Neat.framework */; };
+		EFC3E5F8A7B746B28943F5D9 /* libRNPermissions.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78A0B8B12491407CB6F06EF9 /* libRNPermissions.a */; };
+		F708BE8259EA4175AB942E26 /* libRNGoogleSignin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 852F395F41E44E479181DF98 /* libRNGoogleSignin.a */; };
+		F7955F4CF8DA45BAABD757C6 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E2656C394154620A7DC61F5 /* libRNGestureHandler.a */; };
+		F891BD68CDBA4622B402E9A2 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C1116FC8DF34BCDB40A9BD4 /* Zocial.ttf */; };
+		FBEC738C004F44FB9C7659D6 /* libRNFBApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 681BB9E548204F4E911A55E5 /* libRNFBApp.a */; };
+		FE5F355B7DB246D08FE28DF0 /* libRNReanimated.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 807AB139BC6842EBB3F50153 /* libRNReanimated.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1F4287A6239E01A400078220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F428787239E01A200078220 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F42878E239E01A200078220;
+			remoteInfo = Neat;
+		};
+		1F4287B1239E01A400078220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F428787239E01A200078220 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F42878E239E01A200078220;
+			remoteInfo = Neat;
+		};
+		1F4287D4239E082600078220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 913E1927E2B94C6A9CB2877C /* AirMaps.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 11FA5C511C4A1296003AC2EE;
+			remoteInfo = AirMaps;
+		};
+		1F4287D7239E082600078220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2AEB8FC87B0F45DC8CDC8BBB /* RNFBApp.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2744B98221F45429004F8E3F;
+			remoteInfo = RNFBApp;
+		};
+		1F4287DB239E082600078220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09B92F0DFD694C9DAC8AF278 /* RNGestureHandler.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNGestureHandler;
+		};
+		1F4287DD239E082600078220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 09B92F0DFD694C9DAC8AF278 /* RNGestureHandler.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B5C32A36220C603B000FFB8D;
+			remoteInfo = "RNGestureHandler-tvOS";
+		};
+		1F4287E0239E082600078220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A92D70E242864DE6AD9F150C /* RNGoogleSignin.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9FD355121D3E4A2900D06170;
+			remoteInfo = RNGoogleSignin;
+		};
+		1F4287E3239E082600078220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41E240F7029A4639B70AC889 /* RNPermissions.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNPermissions;
+		};
+		1F4287E6239E082600078220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 69F67A0AC083454AB2B36AD3 /* RNReactNativeLocationSwitch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNReactNativeLocationSwitch;
+		};
+		1F4287EA239E082600078220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A5005B652A643258579CCC4 /* RNReanimated.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNReanimated;
+		};
+		1F4287EC239E082600078220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A5005B652A643258579CCC4 /* RNReanimated.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = FDBB176E229BF04900D1E455;
+			remoteInfo = "RNReanimated-tvOS";
+		};
+		1F4287F0239E082600078220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4AF03F0D207448AD8AB5B198 /* RNVectorIcons.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5DBEB1501B18CEA900B34395;
+			remoteInfo = RNVectorIcons;
+		};
+		1F4287F2239E082600078220 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4AF03F0D207448AD8AB5B198 /* RNVectorIcons.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A39873CE1EA65EE60051E01A;
+			remoteInfo = "RNVectorIcons-tvOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		071AEF41999645738585D754 /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
+		09B92F0DFD694C9DAC8AF278 /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNGestureHandler.xcodeproj; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; };
+		1F42878F239E01A200078220 /* Neat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F428792239E01A200078220 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1F428794239E01A200078220 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		1F428796239E01A200078220 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1F428798239E01A400078220 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1F42879B239E01A400078220 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1F42879E239E01A400078220 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1F4287A0239E01A400078220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F4287A5239E01A400078220 /* NeatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F4287A9239E01A400078220 /* NeatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeatTests.swift; sourceTree = "<group>"; };
+		1F4287AB239E01A400078220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F4287B0239E01A400078220 /* NeatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F4287B4239E01A400078220 /* NeatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NeatUITests.swift; sourceTree = "<group>"; };
+		1F4287B6239E01A400078220 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2196524C402247BC8E9CDC95 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-ionicons/fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		2AEB8FC87B0F45DC8CDC8BBB /* RNFBApp.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNFBApp.xcodeproj; path = "../node_modules/@react-native-firebase/app/ios/RNFBApp.xcodeproj"; sourceTree = "<group>"; };
+		3183CF9AF41C4114B44470E3 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		31CBB17667C9D66FCAD4E8A0 /* Pods-NeatTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeatTests.release.xcconfig"; path = "Target Support Files/Pods-NeatTests/Pods-NeatTests.release.xcconfig"; sourceTree = "<group>"; };
+		3A5005B652A643258579CCC4 /* RNReanimated.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNReanimated.xcodeproj; path = "../node_modules/react-native-reanimated/ios/RNReanimated.xcodeproj"; sourceTree = "<group>"; };
+		41E240F7029A4639B70AC889 /* RNPermissions.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNPermissions.xcodeproj; path = "../node_modules/react-native-permissions/ios/RNPermissions.xcodeproj"; sourceTree = "<group>"; };
+		4AB6C1EDF1FC4DA7A32374F0 /* libRNReactNativeLocationSwitch.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNReactNativeLocationSwitch.a; sourceTree = "<group>"; };
+		4AF03F0D207448AD8AB5B198 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
+		4C1116FC8DF34BCDB40A9BD4 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		51AB31562E584F66AEB2E93A /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		5891531ED0A54E08923E52B6 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
+		60AD4EAEE4A45B71A017FEAB /* Pods-Neat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neat.release.xcconfig"; path = "Target Support Files/Pods-Neat/Pods-Neat.release.xcconfig"; sourceTree = "<group>"; };
+		681BB9E548204F4E911A55E5 /* libRNFBApp.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNFBApp.a; sourceTree = "<group>"; };
+		69F67A0AC083454AB2B36AD3 /* RNReactNativeLocationSwitch.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNReactNativeLocationSwitch.xcodeproj; path = "../node_modules/react-native-location-switch/ios/RNReactNativeLocationSwitch.xcodeproj"; sourceTree = "<group>"; };
+		6C5BB93F1355487DAF3EAF5E /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		731132FD88D1AC33935A4316 /* Pods_Neat_NeatUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neat_NeatUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75EF79316B474C21B1F8164D /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		78A0B8B12491407CB6F06EF9 /* libRNPermissions.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNPermissions.a; sourceTree = "<group>"; };
+		807AB139BC6842EBB3F50153 /* libRNReanimated.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNReanimated.a; sourceTree = "<group>"; };
+		852F395F41E44E479181DF98 /* libRNGoogleSignin.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNGoogleSignin.a; sourceTree = "<group>"; };
+		8AF6C3B49007647E2D07EFE8 /* Pods-Neat-NeatUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neat-NeatUITests.release.xcconfig"; path = "Target Support Files/Pods-Neat-NeatUITests/Pods-Neat-NeatUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8CF0F3E29AAB4892931612D0 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		8E2656C394154620A7DC61F5 /* libRNGestureHandler.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNGestureHandler.a; sourceTree = "<group>"; };
+		913E1927E2B94C6A9CB2877C /* AirMaps.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AirMaps.xcodeproj; path = "../node_modules/react-native-maps/lib/ios/AirMaps.xcodeproj"; sourceTree = "<group>"; };
+		99C50613F9AB48E1BB4D4339 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		A2225439F8A442998395BEE7 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		A8140C0A634DF16EB56C2C11 /* Pods_Neat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Neat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A83B09D178654DBDA3EDEBDD /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		A92D70E242864DE6AD9F150C /* RNGoogleSignin.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNGoogleSignin.xcodeproj; path = "../node_modules/react-native-google-signin/ios/RNGoogleSignin.xcodeproj"; sourceTree = "<group>"; };
+		B59B82E5E5F94539B3430095 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		BEC121A775CD497E85EB1427 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		C67B9B6C1CE548ABAEC3BB2D /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
+		D257E84E37F945D2B8FBBCE3 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		E08CD18C6C56693F9DDD91A3 /* Pods-Neat-NeatUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neat-NeatUITests.debug.xcconfig"; path = "Target Support Files/Pods-Neat-NeatUITests/Pods-Neat-NeatUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F4CA22C698BE032C5D1CF581 /* Pods-NeatTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NeatTests.debug.xcconfig"; path = "Target Support Files/Pods-NeatTests/Pods-NeatTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F568FC03C4BC47D8940E68C7 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		F5810225B6424C1D93DF0497 /* libAirMaps.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAirMaps.a; sourceTree = "<group>"; };
+		FCB0EEF504550591B2837C28 /* Pods_NeatTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NeatTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FF41CF43C34D6D3D3F2BCBE1 /* Pods-Neat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neat.debug.xcconfig"; path = "Target Support Files/Pods-Neat/Pods-Neat.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1F42878C239E01A200078220 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBEC738C004F44FB9C7659D6 /* libRNFBApp.a in Frameworks */,
+				F7955F4CF8DA45BAABD757C6 /* libRNGestureHandler.a in Frameworks */,
+				F708BE8259EA4175AB942E26 /* libRNGoogleSignin.a in Frameworks */,
+				7C8FF38957DB4E8FB9099B58 /* libRNReactNativeLocationSwitch.a in Frameworks */,
+				4599257D098C43918D82F2DB /* libAirMaps.a in Frameworks */,
+				EFC3E5F8A7B746B28943F5D9 /* libRNPermissions.a in Frameworks */,
+				FE5F355B7DB246D08FE28DF0 /* libRNReanimated.a in Frameworks */,
+				0583966BE7D74665A60386CB /* libRNVectorIcons.a in Frameworks */,
+				EB9EE66CD0C07609BF307E73 /* Pods_Neat.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F4287A2239E01A400078220 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				286F34A4E5068EE4DD5C2CE9 /* Pods_NeatTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F4287AD239E01A400078220 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70D11122DB0D6681891A236A /* Pods_Neat_NeatUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F428786239E01A200078220 = {
+			isa = PBXGroup;
+			children = (
+				1F428791239E01A200078220 /* Neat */,
+				1F4287A8239E01A400078220 /* NeatTests */,
+				1F4287B3239E01A400078220 /* NeatUITests */,
+				1F428790239E01A200078220 /* Products */,
+				B75513F652EE4D69B866A5BA /* Libraries */,
+				AA3C3B9D59F042849137C817 /* Resources */,
+				1F4287C2239E082500078220 /* Recovered References */,
+				A0B00C29C842F663EDDA0571 /* Pods */,
+				997F3EBA99E0298802CE5795 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1F428790239E01A200078220 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F42878F239E01A200078220 /* Neat.app */,
+				1F4287A5239E01A400078220 /* NeatTests.xctest */,
+				1F4287B0239E01A400078220 /* NeatUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F428791239E01A200078220 /* Neat */ = {
+			isa = PBXGroup;
+			children = (
+				1F428792239E01A200078220 /* AppDelegate.swift */,
+				1F428794239E01A200078220 /* SceneDelegate.swift */,
+				1F428796239E01A200078220 /* ContentView.swift */,
+				1F428798239E01A400078220 /* Assets.xcassets */,
+				1F42879D239E01A400078220 /* LaunchScreen.storyboard */,
+				1F4287A0239E01A400078220 /* Info.plist */,
+				1F42879A239E01A400078220 /* Preview Content */,
+			);
+			path = Neat;
+			sourceTree = "<group>";
+		};
+		1F42879A239E01A400078220 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1F42879B239E01A400078220 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1F4287A8239E01A400078220 /* NeatTests */ = {
+			isa = PBXGroup;
+			children = (
+				1F4287A9239E01A400078220 /* NeatTests.swift */,
+				1F4287AB239E01A400078220 /* Info.plist */,
+			);
+			path = NeatTests;
+			sourceTree = "<group>";
+		};
+		1F4287B3239E01A400078220 /* NeatUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1F4287B4239E01A400078220 /* NeatUITests.swift */,
+				1F4287B6239E01A400078220 /* Info.plist */,
+			);
+			path = NeatUITests;
+			sourceTree = "<group>";
+		};
+		1F4287C2239E082500078220 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				681BB9E548204F4E911A55E5 /* libRNFBApp.a */,
+				8E2656C394154620A7DC61F5 /* libRNGestureHandler.a */,
+				852F395F41E44E479181DF98 /* libRNGoogleSignin.a */,
+				4AB6C1EDF1FC4DA7A32374F0 /* libRNReactNativeLocationSwitch.a */,
+				F5810225B6424C1D93DF0497 /* libAirMaps.a */,
+				78A0B8B12491407CB6F06EF9 /* libRNPermissions.a */,
+				807AB139BC6842EBB3F50153 /* libRNReanimated.a */,
+				C67B9B6C1CE548ABAEC3BB2D /* libRNVectorIcons.a */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		1F4287C3239E082500078220 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F4287D5239E082600078220 /* libAirMaps.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F4287C5239E082500078220 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F4287EB239E082600078220 /* libRNReanimated.a */,
+				1F4287ED239E082600078220 /* libRNReanimated-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F4287C7239E082500078220 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F4287D8239E082600078220 /* libRNFBApp.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F4287C9239E082500078220 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F4287DC239E082600078220 /* libRNGestureHandler.a */,
+				1F4287DE239E082600078220 /* libRNGestureHandler-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F4287CB239E082500078220 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F4287E1239E082600078220 /* libRNGoogleSignin.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F4287CD239E082500078220 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F4287E7239E082600078220 /* libRNReactNativeLocationSwitch.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F4287CF239E082500078220 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F4287E4239E082600078220 /* libRNPermissions.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F4287D1239E082500078220 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F4287F1239E082600078220 /* libRNVectorIcons.a */,
+				1F4287F3239E082600078220 /* libRNVectorIcons-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		997F3EBA99E0298802CE5795 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8140C0A634DF16EB56C2C11 /* Pods_Neat.framework */,
+				731132FD88D1AC33935A4316 /* Pods_Neat_NeatUITests.framework */,
+				FCB0EEF504550591B2837C28 /* Pods_NeatTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A0B00C29C842F663EDDA0571 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FF41CF43C34D6D3D3F2BCBE1 /* Pods-Neat.debug.xcconfig */,
+				60AD4EAEE4A45B71A017FEAB /* Pods-Neat.release.xcconfig */,
+				E08CD18C6C56693F9DDD91A3 /* Pods-Neat-NeatUITests.debug.xcconfig */,
+				8AF6C3B49007647E2D07EFE8 /* Pods-Neat-NeatUITests.release.xcconfig */,
+				F4CA22C698BE032C5D1CF581 /* Pods-NeatTests.debug.xcconfig */,
+				31CBB17667C9D66FCAD4E8A0 /* Pods-NeatTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AA3C3B9D59F042849137C817 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2196524C402247BC8E9CDC95 /* Ionicons.ttf */,
+				A2225439F8A442998395BEE7 /* AntDesign.ttf */,
+				51AB31562E584F66AEB2E93A /* Entypo.ttf */,
+				3183CF9AF41C4114B44470E3 /* EvilIcons.ttf */,
+				B59B82E5E5F94539B3430095 /* Feather.ttf */,
+				8CF0F3E29AAB4892931612D0 /* FontAwesome.ttf */,
+				6C5BB93F1355487DAF3EAF5E /* FontAwesome5_Brands.ttf */,
+				5891531ED0A54E08923E52B6 /* FontAwesome5_Regular.ttf */,
+				BEC121A775CD497E85EB1427 /* FontAwesome5_Solid.ttf */,
+				071AEF41999645738585D754 /* Fontisto.ttf */,
+				F568FC03C4BC47D8940E68C7 /* Foundation.ttf */,
+				A83B09D178654DBDA3EDEBDD /* MaterialCommunityIcons.ttf */,
+				99C50613F9AB48E1BB4D4339 /* MaterialIcons.ttf */,
+				75EF79316B474C21B1F8164D /* Octicons.ttf */,
+				D257E84E37F945D2B8FBBCE3 /* SimpleLineIcons.ttf */,
+				4C1116FC8DF34BCDB40A9BD4 /* Zocial.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		B75513F652EE4D69B866A5BA /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				2AEB8FC87B0F45DC8CDC8BBB /* RNFBApp.xcodeproj */,
+				09B92F0DFD694C9DAC8AF278 /* RNGestureHandler.xcodeproj */,
+				A92D70E242864DE6AD9F150C /* RNGoogleSignin.xcodeproj */,
+				69F67A0AC083454AB2B36AD3 /* RNReactNativeLocationSwitch.xcodeproj */,
+				913E1927E2B94C6A9CB2877C /* AirMaps.xcodeproj */,
+				41E240F7029A4639B70AC889 /* RNPermissions.xcodeproj */,
+				3A5005B652A643258579CCC4 /* RNReanimated.xcodeproj */,
+				4AF03F0D207448AD8AB5B198 /* RNVectorIcons.xcodeproj */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1F42878E239E01A200078220 /* Neat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F4287B9239E01A400078220 /* Build configuration list for PBXNativeTarget "Neat" */;
+			buildPhases = (
+				CFA03CFB54137E2FD946CF70 /* [CP] Check Pods Manifest.lock */,
+				1F42878B239E01A200078220 /* Sources */,
+				1F42878C239E01A200078220 /* Frameworks */,
+				1F42878D239E01A200078220 /* Resources */,
+				A74D1A03630DBF856BE08E5B /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Neat;
+			productName = Neat;
+			productReference = 1F42878F239E01A200078220 /* Neat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1F4287A4239E01A400078220 /* NeatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F4287BC239E01A400078220 /* Build configuration list for PBXNativeTarget "NeatTests" */;
+			buildPhases = (
+				813BA5C057C3929936B4DBD2 /* [CP] Check Pods Manifest.lock */,
+				1F4287A1239E01A400078220 /* Sources */,
+				1F4287A2239E01A400078220 /* Frameworks */,
+				1F4287A3239E01A400078220 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F4287A7239E01A400078220 /* PBXTargetDependency */,
+			);
+			name = NeatTests;
+			productName = NeatTests;
+			productReference = 1F4287A5239E01A400078220 /* NeatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1F4287AF239E01A400078220 /* NeatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F4287BF239E01A400078220 /* Build configuration list for PBXNativeTarget "NeatUITests" */;
+			buildPhases = (
+				9FE92FDDDCA4770BA4F3F6F4 /* [CP] Check Pods Manifest.lock */,
+				1F4287AC239E01A400078220 /* Sources */,
+				1F4287AD239E01A400078220 /* Frameworks */,
+				1F4287AE239E01A400078220 /* Resources */,
+				99F97EAF0045CC77DA74188E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F4287B2239E01A400078220 /* PBXTargetDependency */,
+			);
+			name = NeatUITests;
+			productName = NeatUITests;
+			productReference = 1F4287B0239E01A400078220 /* NeatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1F428787239E01A200078220 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = Debsub;
+				TargetAttributes = {
+					1F42878E239E01A200078220 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					1F4287A4239E01A400078220 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 1F42878E239E01A200078220;
+					};
+					1F4287AF239E01A400078220 = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 1F42878E239E01A200078220;
+					};
+				};
+			};
+			buildConfigurationList = 1F42878A239E01A200078220 /* Build configuration list for PBXProject "Neat" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1F428786239E01A200078220;
+			productRefGroup = 1F428790239E01A200078220 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1F4287C3239E082500078220 /* Products */;
+					ProjectRef = 913E1927E2B94C6A9CB2877C /* AirMaps.xcodeproj */;
+				},
+				{
+					ProductGroup = 1F4287C7239E082500078220 /* Products */;
+					ProjectRef = 2AEB8FC87B0F45DC8CDC8BBB /* RNFBApp.xcodeproj */;
+				},
+				{
+					ProductGroup = 1F4287C9239E082500078220 /* Products */;
+					ProjectRef = 09B92F0DFD694C9DAC8AF278 /* RNGestureHandler.xcodeproj */;
+				},
+				{
+					ProductGroup = 1F4287CB239E082500078220 /* Products */;
+					ProjectRef = A92D70E242864DE6AD9F150C /* RNGoogleSignin.xcodeproj */;
+				},
+				{
+					ProductGroup = 1F4287CF239E082500078220 /* Products */;
+					ProjectRef = 41E240F7029A4639B70AC889 /* RNPermissions.xcodeproj */;
+				},
+				{
+					ProductGroup = 1F4287CD239E082500078220 /* Products */;
+					ProjectRef = 69F67A0AC083454AB2B36AD3 /* RNReactNativeLocationSwitch.xcodeproj */;
+				},
+				{
+					ProductGroup = 1F4287C5239E082500078220 /* Products */;
+					ProjectRef = 3A5005B652A643258579CCC4 /* RNReanimated.xcodeproj */;
+				},
+				{
+					ProductGroup = 1F4287D1239E082500078220 /* Products */;
+					ProjectRef = 4AF03F0D207448AD8AB5B198 /* RNVectorIcons.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				1F42878E239E01A200078220 /* Neat */,
+				1F4287A4239E01A400078220 /* NeatTests */,
+				1F4287AF239E01A400078220 /* NeatUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		1F4287D5239E082600078220 /* libAirMaps.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAirMaps.a;
+			remoteRef = 1F4287D4239E082600078220 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1F4287D8239E082600078220 /* libRNFBApp.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNFBApp.a;
+			remoteRef = 1F4287D7239E082600078220 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1F4287DC239E082600078220 /* libRNGestureHandler.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNGestureHandler.a;
+			remoteRef = 1F4287DB239E082600078220 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1F4287DE239E082600078220 /* libRNGestureHandler-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRNGestureHandler-tvOS.a";
+			remoteRef = 1F4287DD239E082600078220 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1F4287E1239E082600078220 /* libRNGoogleSignin.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNGoogleSignin.a;
+			remoteRef = 1F4287E0239E082600078220 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1F4287E4239E082600078220 /* libRNPermissions.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNPermissions.a;
+			remoteRef = 1F4287E3239E082600078220 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1F4287E7239E082600078220 /* libRNReactNativeLocationSwitch.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNReactNativeLocationSwitch.a;
+			remoteRef = 1F4287E6239E082600078220 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1F4287EB239E082600078220 /* libRNReanimated.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNReanimated.a;
+			remoteRef = 1F4287EA239E082600078220 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1F4287ED239E082600078220 /* libRNReanimated-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRNReanimated-tvOS.a";
+			remoteRef = 1F4287EC239E082600078220 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1F4287F1239E082600078220 /* libRNVectorIcons.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNVectorIcons.a;
+			remoteRef = 1F4287F0239E082600078220 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1F4287F3239E082600078220 /* libRNVectorIcons-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRNVectorIcons-tvOS.a";
+			remoteRef = 1F4287F2239E082600078220 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1F42878D239E01A200078220 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F42879F239E01A400078220 /* LaunchScreen.storyboard in Resources */,
+				1F42879C239E01A400078220 /* Preview Assets.xcassets in Resources */,
+				1F428799239E01A400078220 /* Assets.xcassets in Resources */,
+				57BC387669FC4B22A8E46C4F /* Ionicons.ttf in Resources */,
+				7F994E87844D416EB90FE9D7 /* AntDesign.ttf in Resources */,
+				DFA12B003DE04B41A58FC77F /* Entypo.ttf in Resources */,
+				5576F0665F0F43E0B1EAB0DC /* EvilIcons.ttf in Resources */,
+				4DEC75DFE3354104AD021077 /* Feather.ttf in Resources */,
+				627F7496EA3E4F19B7D8D12F /* FontAwesome.ttf in Resources */,
+				0B6570A8933149B9B992FD48 /* FontAwesome5_Brands.ttf in Resources */,
+				779C74F758D44408962D2F00 /* FontAwesome5_Regular.ttf in Resources */,
+				D3684FDC259340B589BD77B3 /* FontAwesome5_Solid.ttf in Resources */,
+				9CD755FC111946868B250028 /* Fontisto.ttf in Resources */,
+				467F655103EC4011A44126D7 /* Foundation.ttf in Resources */,
+				D714B5D71ED74D318D359A6C /* MaterialCommunityIcons.ttf in Resources */,
+				7FAFFADA82EC484D8BADFC2C /* MaterialIcons.ttf in Resources */,
+				A29031799FCB417AA8E2859F /* Octicons.ttf in Resources */,
+				4CC14A85DDF3495D85EF7530 /* SimpleLineIcons.ttf in Resources */,
+				F891BD68CDBA4622B402E9A2 /* Zocial.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F4287A3239E01A400078220 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F4287AE239E01A400078220 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		813BA5C057C3929936B4DBD2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NeatTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99F97EAF0045CC77DA74188E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Neat-NeatUITests/Pods-Neat-NeatUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Neat-NeatUITests/Pods-Neat-NeatUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Neat-NeatUITests/Pods-Neat-NeatUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9FE92FDDDCA4770BA4F3F6F4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Neat-NeatUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A74D1A03630DBF856BE08E5B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Neat/Pods-Neat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Neat/Pods-Neat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Neat/Pods-Neat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CFA03CFB54137E2FD946CF70 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Neat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F42878B239E01A200078220 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F428793239E01A200078220 /* AppDelegate.swift in Sources */,
+				1F428795239E01A200078220 /* SceneDelegate.swift in Sources */,
+				1F428797239E01A200078220 /* ContentView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F4287A1239E01A400078220 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F4287AA239E01A400078220 /* NeatTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F4287AC239E01A400078220 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F4287B5239E01A400078220 /* NeatUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1F4287A7239E01A400078220 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F42878E239E01A200078220 /* Neat */;
+			targetProxy = 1F4287A6239E01A400078220 /* PBXContainerItemProxy */;
+		};
+		1F4287B2239E01A400078220 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F42878E239E01A200078220 /* Neat */;
+			targetProxy = 1F4287B1239E01A400078220 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1F42879D239E01A400078220 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F42879E239E01A400078220 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1F4287B7239E01A400078220 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1F4287B8239E01A400078220 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1F4287BA239E01A400078220 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FF41CF43C34D6D3D3F2BCBE1 /* Pods-Neat.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Neat/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Neat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Debsub.Neat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1F4287BB239E01A400078220 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60AD4EAEE4A45B71A017FEAB /* Pods-Neat.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Neat/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Neat/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Debsub.Neat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1F4287BD239E01A400078220 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4CA22C698BE032C5D1CF581 /* Pods-NeatTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NeatTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Debsub.NeatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Neat.app/Neat";
+			};
+			name = Debug;
+		};
+		1F4287BE239E01A400078220 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31CBB17667C9D66FCAD4E8A0 /* Pods-NeatTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NeatTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Debsub.NeatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Neat.app/Neat";
+			};
+			name = Release;
+		};
+		1F4287C0239E01A400078220 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E08CD18C6C56693F9DDD91A3 /* Pods-Neat-NeatUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NeatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Debsub.NeatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Neat;
+			};
+			name = Debug;
+		};
+		1F4287C1239E01A400078220 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AF6C3B49007647E2D07EFE8 /* Pods-Neat-NeatUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NeatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Debsub.NeatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Neat;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F42878A239E01A200078220 /* Build configuration list for PBXProject "Neat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F4287B7239E01A400078220 /* Debug */,
+				1F4287B8239E01A400078220 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F4287B9239E01A400078220 /* Build configuration list for PBXNativeTarget "Neat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F4287BA239E01A400078220 /* Debug */,
+				1F4287BB239E01A400078220 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F4287BC239E01A400078220 /* Build configuration list for PBXNativeTarget "NeatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F4287BD239E01A400078220 /* Debug */,
+				1F4287BE239E01A400078220 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F4287BF239E01A400078220 /* Build configuration list for PBXNativeTarget "NeatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F4287C0239E01A400078220 /* Debug */,
+				1F4287C1239E01A400078220 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1F428787239E01A200078220 /* Project object */;
+}
