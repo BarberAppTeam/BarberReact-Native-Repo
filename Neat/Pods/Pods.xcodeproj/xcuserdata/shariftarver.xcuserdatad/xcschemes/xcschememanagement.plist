@@ -84,11 +84,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-Neat-NeatUITests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Neat.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -99,12 +94,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-NeatUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>RNPermissions.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>React.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>react-native-geolocation.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

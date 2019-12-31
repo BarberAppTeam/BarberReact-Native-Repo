@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7D3184FD30E49E3C22CDF797A5241DCC"
-               BuildableName = "Permission-Microphone.framework"
+               BuildableName = "libPermission-Microphone.a"
                BlueprintName = "Permission-Microphone"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

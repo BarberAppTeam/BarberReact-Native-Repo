@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "100D3FB4F73CF45FA03FB7F17F6DD550"
-               BuildableName = "Pods-Neat.framework"
+               BuildableName = "libPods-Neat.a"
                BlueprintName = "Pods-Neat"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "33A15E1BE86AE4E37A94810E850B43AB"
-               BuildableName = "Permission-BluetoothPeripheral.framework"
+               BuildableName = "libPermission-BluetoothPeripheral.a"
                BlueprintName = "Permission-BluetoothPeripheral"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

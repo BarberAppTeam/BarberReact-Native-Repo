@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CC768669E99CCE000B86A24E627D6D42"
-               BuildableName = "Permission-FaceID.framework"
+               BuildableName = "libPermission-FaceID.a"
                BlueprintName = "Permission-FaceID"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

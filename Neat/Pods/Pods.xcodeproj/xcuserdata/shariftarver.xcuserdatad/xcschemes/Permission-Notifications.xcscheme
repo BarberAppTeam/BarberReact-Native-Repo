@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "AEAF8F20A91213F721C1488ECCABB561"
-               BuildableName = "Permission-Notifications.framework"
+               BuildableName = "libPermission-Notifications.a"
                BlueprintName = "Permission-Notifications"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

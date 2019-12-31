@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "EAFFFC4854707893E09C30620A67CE25"
-               BuildableName = "Permission-LocationAlways.framework"
+               BuildableName = "libPermission-LocationAlways.a"
                BlueprintName = "Permission-LocationAlways"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

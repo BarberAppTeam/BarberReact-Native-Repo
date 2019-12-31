@@ -33,6 +33,8 @@ PODS:
     - RNPermissions
   - React (0.11.0):
     - React/Core (= 0.11.0)
+  - react-native-geolocation (2.0.2):
+    - React
   - React/Core (0.11.0)
   - RNPermissions (2.0.8):
     - React
@@ -54,6 +56,7 @@ DEPENDENCIES:
   - Permission-Siri (from `../node_modules/react-native-permissions/ios/Siri.podspec`)
   - Permission-SpeechRecognition (from `../node_modules/react-native-permissions/ios/SpeechRecognition.podspec`)
   - Permission-StoreKit (from `../node_modules/react-native-permissions/ios/StoreKit.podspec`)
+  - "react-native-geolocation (from `../node_modules/@react-native-community/geolocation`)"
   - RNPermissions (from `../node_modules/react-native-permissions`)
 
 SPEC REPOS:
@@ -93,6 +96,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-permissions/ios/SpeechRecognition.podspec"
   Permission-StoreKit:
     :path: "../node_modules/react-native-permissions/ios/StoreKit.podspec"
+  react-native-geolocation:
+    :path: "../node_modules/@react-native-community/geolocation"
   RNPermissions:
     :path: "../node_modules/react-native-permissions"
 
@@ -114,8 +119,9 @@ SPEC CHECKSUMS:
   Permission-SpeechRecognition: 6fed9a61adfd624849c552fd3250ed91af7ecfbe
   Permission-StoreKit: b94f0edbd3de3d997c0e30c8fce7f2a286ca3877
   React: ab1a2e21deb34965c38328d5ec40cc7d12c6050a
+  react-native-geolocation: cbd9d6bd06bac411eed2671810f454d4908484a8
   RNPermissions: 409e55ed060f7e35d4a3dfc3a336f94a5811dec1
 
-PODFILE CHECKSUM: be57907023c3905df2b40284409accfdc881926f
+PODFILE CHECKSUM: 76232af1008428c2551d575362186115dec6dc6b
 
 COCOAPODS: 1.8.4

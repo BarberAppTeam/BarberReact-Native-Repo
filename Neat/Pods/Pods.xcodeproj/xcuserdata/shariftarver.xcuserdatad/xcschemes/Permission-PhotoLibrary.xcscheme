@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3A76649B69E9894A79F31A5D1ECC1560"
-               BuildableName = "Permission-PhotoLibrary.framework"
+               BuildableName = "libPermission-PhotoLibrary.a"
                BlueprintName = "Permission-PhotoLibrary"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

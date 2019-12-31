@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D9A57597EA9CB81796326ADC3CD86E8A"
-               BuildableName = "Permission-SpeechRecognition.framework"
+               BuildableName = "libPermission-SpeechRecognition.a"
                BlueprintName = "Permission-SpeechRecognition"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

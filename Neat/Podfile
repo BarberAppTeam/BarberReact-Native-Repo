@@ -1,24 +1,10 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '13.0'
 
 target 'Neat' do
   # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for Neat
-
-  target 'NeatTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'NeatUITests' do
-    # Pods for testing
-  end
- 
-  # … 
   permissions_path = '../node_modules/react-native-permissions/ios'
- 
+
   pod 'Permission-BluetoothPeripheral', :path => "#{permissions_path}/BluetoothPeripheral.podspec"
   pod 'Permission-Calendars', :path => "#{permissions_path}/Calendars.podspec"
   pod 'Permission-Camera', :path => "#{permissions_path}/Camera.podspec"
@@ -37,4 +23,18 @@ target 'Neat' do
   pod 'Permission-StoreKit', :path => "#{permissions_path}/StoreKit.podspec"
   pod 'RNPermissions', :path => '../node_modules/react-native-permissions'
 
+  pod 'react-native-geolocation', :path => '../node_modules/@react-native-community/geolocation'
+
 end
+
+
+  target 'NeatTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'NeatUITests' do
+    # Pods for testing
+  end
+ 
+  

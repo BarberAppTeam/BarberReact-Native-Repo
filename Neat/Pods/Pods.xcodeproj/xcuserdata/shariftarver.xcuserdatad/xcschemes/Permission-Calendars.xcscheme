@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "FF59FBA2557C38811CC6D65B12746664"
-               BuildableName = "Permission-Calendars.framework"
+               BuildableName = "libPermission-Calendars.a"
                BlueprintName = "Permission-Calendars"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

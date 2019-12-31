@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "558999CBBD3D018BC29B08A86910A696"
-               BuildableName = "Permission-Siri.framework"
+               BuildableName = "libPermission-Siri.a"
                BlueprintName = "Permission-Siri"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

@@ -19,7 +19,7 @@ export default class Profile extends Component {
   }
 }
 
-const CustomDrawerComponent = (props) => (
+/*const CustomDrawerComponent = (props) => (
   <SafeAreaView style={{flex:1}}>
     <View style={{height:150, backgroundColor:'white', alignItems:'center', justifyContent:'center'}}>
 
@@ -32,7 +32,7 @@ const CustomDrawerComponent = (props) => (
 )
 const AppDrawerNavigator = createDrawerNavigator({
   Settings:SettingsScreen
-})
+})*/
 
 
 

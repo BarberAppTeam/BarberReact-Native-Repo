@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1FC4BC4CDE1177BB796D9B89972D276A"
-               BuildableName = "Permission-Motion.framework"
+               BuildableName = "libPermission-Motion.a"
                BlueprintName = "Permission-Motion"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

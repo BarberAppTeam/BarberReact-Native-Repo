@@ -54,7 +54,7 @@
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>Give Expo experiences permission to save photos</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Give Expo experiences permission to access your photos</string>
+	<string>Give Expo permission to access your photos</string>
 	<key>NSRemindersUsageDescription</key>
 	<string>Allow Expo experiences to access your reminders</string>
 	<key>UILaunchStoryboardName</key>

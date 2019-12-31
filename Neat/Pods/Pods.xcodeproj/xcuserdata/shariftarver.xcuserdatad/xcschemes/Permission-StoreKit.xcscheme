@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "14EB749C3560C8AD04C931F35ADE996D"
-               BuildableName = "Permission-StoreKit.framework"
+               BuildableName = "libPermission-StoreKit.a"
                BlueprintName = "Permission-StoreKit"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>

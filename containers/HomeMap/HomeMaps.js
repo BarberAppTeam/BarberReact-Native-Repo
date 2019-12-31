@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import styles from './styles';
 import {Stylesheet,View,Text,TouchableOpacity,Platform, Button, Alert} from 'react-native';
-import Permissions from 'react-native-permissions';
 import MapView from 'react-native-maps';
 import { Card, SimpleCard } from "@paraboly/react-native-card";
+import Constants from 'expo-constants';
+import * as Location from 'expo-location';
+import Permissions from 'react-native-permissions';
 
 
 
@@ -22,15 +24,7 @@ const Region = {
 export default class HomeMaps extends Component {
 
 
-     /* state = {
-    search: '',
-  };
-
-  updateSearch = search => {
-    this.setState({ search });
-  };
-
-*/
+ 
  constructor(props) {
     super(props);
     this.state = {Region};
@@ -38,24 +32,27 @@ export default class HomeMaps extends Component {
     }
 
 
-componentDidMount() {
-        return getCurrentLocation().then(position => {
-                    if (position) { 
-                        this.setState({Region});
-                    }
-                });
-            }
+    componentWillMount() {
+        if (Platform.OS === 'android' && !Constants.isDevice) {
+            this.setState({
+                errorMessage: 'Oops, this will not work on Sketch in an Android emulator. Try it on your device!',
+            });
+        } else {
+            this._getLocationAsync();
+        }
+    }
 
-            findCoordinates = () => {
-                navigator.geolocation.getCurrentPosition(
-                    position => {
-                        const location = JSON.stringify(position);
-                        this.setState({location});
-                    },
-                    error => Alert.alert(error.message),
-                    {enableHighAccuracy: true, timeout:20000, maximumAge:1000}
-                );
-            };
+    _getLocationAsync = async () => {
+        let { status } = await Permissions.askAsync(Permissions.LOCATION);
+        if (status !== 'granted') {
+            this.setState({
+                errorMessage: 'Permission to access location was denied',
+            });
+        }
+
+        let location = await Location.getCurrentPositionAsync({});
+        this.setState({ location });
+    };
 
   render() {
     
@@ -68,24 +65,16 @@ componentDidMount() {
         showsMyLocationButton={true}
         showsBuildings={true}
         zoomEnabled={true}
-        onMapReady={() => {
-        Permissions.request(
-        Permissions.PERMISSIONS.IOS.LOCATION_WHEN_IN_USE
-     ).then(granted => {
-      alert(granted) // just to ensure that permissions were granted
-    });
-  }}
 
 
       initialRegion={
           {   
-              
-              latitude: 42.882004,
-              longitude: 74.582748,
+              latitude: 37.78825,
+              longitude: -122.4324,
               latitudeDelta: 0.0922,
-              longitudeDelta: 0.0421
-          }
-      }>
+              longitudeDelta: 0.0421,
+        }
+    }>
 
 
         <Text style = {
