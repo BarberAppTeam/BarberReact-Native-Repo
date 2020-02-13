@@ -4,10 +4,10 @@ import HomeMapStackScreen from './HomeMapStackScreen';
 import ExploreStackScreen from './ExploreStackScreen';
 import ProfileStackScreen from './ProfileStackScreen';
 import NotificationStackScreen from './NotificationStackScreen';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
 
-const ICON_SIZE = 10;
 const CustomTabBar = createBottomTabNavigator({
 
     
@@ -16,9 +16,9 @@ const CustomTabBar = createBottomTabNavigator({
         navigationOptions:{
             header:null,
             tabBarlabel:'Map',
-            /*tabBarIcon:({tintColor}) => (
-                <Icons name = "ios-compass" color={tintColor} size={ICON_SIZE}/>
-            )*/
+            tabBarIcon:({tintColor}) => (
+                <Ionicons name="ios-compass" size={32} style={styles.Icon}/>
+            )
 
         }
 
@@ -28,9 +28,9 @@ const CustomTabBar = createBottomTabNavigator({
         navigationOptions:{
             header:null,
             tabBarlabel:'Explore',
-            /*tabBarIcon:({tintColor}) => (
-                <Icons name="home"  color={tintColor} size={ICON_SIZE}/>
-            )*/
+            tabBarIcon:({tintColor}) => (
+                <Ionicons name="ios-home" size={32} style={styles.Icon} />
+            )
         }
     },
     Notifications:{
@@ -38,9 +38,9 @@ const CustomTabBar = createBottomTabNavigator({
         navigationOptions:{
             header:null,
             tabBarlabel:'Notifications',
-           /* tabBarIcon:({tintColor}) => (
-                <Icons name = "ios-notifications" color={tintColor} size={ICON_SIZE}/>
-            )*/
+            tabBarIcon:({tintColor}) => (
+                <Ionicons name="ios-notifications" size={32} style={styles.Icon} />
+            )
         }
 
     },
@@ -49,9 +49,9 @@ const CustomTabBar = createBottomTabNavigator({
         navigationOptions: {
             header:null,
             tabBarlabel:'Profile',
-            /*tabBarIcon: ({ tintColor}) => (
-                <Icons name='md-contact' size={ICON_SIZE} color={tintColor}/>
-            )*/
+            tabBarIcon: ({ tintColor}) => (
+                <Ionicons name="md-contact" size={32} style={styles.Icon} />
+            )
         }
     },
     
@@ -79,6 +79,11 @@ const CustomTabBar = createBottomTabNavigator({
 
         },
     });
+const styles = StyleSheet.create({
+Icon:{
+    marginTop:5
+}
 
+})
 export default  CustomTabBar;
 

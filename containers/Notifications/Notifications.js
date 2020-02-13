@@ -1,144 +1,198 @@
 import React, { Component } from 'react';
-import {
-  Platform, StyleSheet, Text, View,
-  Button, Alert,
-  ActivityIndicator,
-} from 'react-native';
+import { View, Text, FlatList, ActivityIndicator ,StyleSheet} from 'react-native';
+import { ListItem, SearchBar } from 'react-native-elements';
+import { Hub, Logger } from 'aws-amplify';
 
-import GetLocation from 'react-native-get-location';
+const logger = new Logger('My-Logger');
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+const listener = (data) => {
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-  location: {
-    color: '#333333',
-    marginBottom: 5,
-  },
-  button: {
-    marginBottom: 8,
+  switch (data.payload.event) {
+
+    case 'signIn':
+      logger.error('user signed in'); //[ERROR] My-Logger - user signed in
+      break;
+    case 'signUp':
+      logger.error('user signed up');
+      break;
+    case 'signOut':
+      logger.error('user signed out');
+      break;
+    case 'signIn_failure':
+      logger.error('user sign in failed');
+      break;
+    case 'configured':
+      logger.error('the Auth module is configured');
+
   }
-});
+}
+
+Hub.listen('auth', listener);
 
 export default class Notifications extends Component {
+  constructor(props) {
+    super(props);
 
-  state = {
-    location: null,
-    loading: false,
+    this.state = {
+      loading: false,
+      data: [],
+      error: null,
+    };
+
+    this.arrayholder = [];
   }
 
-  _requestLocation = () => {
-    this.setState({ loading: true, location: null });
+  componentDidMount() {
+    this.makeRemoteRequest();
+  }
 
-    GetLocation.getCurrentPosition({
-      enableHighAccuracy: true,
-      timeout: 150000,
-    })
-      .then(location => {
+  makeRemoteRequest = () => {
+    const url = `https://randomuser.me/api/?&results=20`;
+    this.setState({ loading: true });
+
+    fetch(url)
+      .then(res => res.json())
+      .then(res => {
         this.setState({
-          location,
+          data: res.results,
+          error: res.error || null,
           loading: false,
         });
+        this.arrayholder = res.results;
       })
-      .catch(ex => {
-        const { code, message } = ex;
-        console.warn(code, message);
-        if (code === 'CANCELLED') {
-          Alert.alert('Location cancelled by user or by another request');
-        }
-        if (code === 'UNAVAILABLE') {
-          Alert.alert('Location service is disabled or unavailable');
-        }
-        if (code === 'TIMEOUT') {
-          Alert.alert('Location request timed out');
-        }
-        if (code === 'UNAUTHORIZED') {
-          Alert.alert('Authorization denied');
-        }
-        this.setState({
-          location: null,
-          loading: false,
-        });
+      .catch(error => {
+        this.setState({ error, loading: false });
       });
-  }
+  };
+
+  renderSeparator = () => {
+    return (
+      <View
+        style={{
+          height: 1,
+          width: '86%',
+          backgroundColor: '#CED0CE',
+          marginLeft: '14%',
+        }}
+      />
+    );
+  };
+
+  searchFilterFunction = text => {
+    this.setState({
+      value: text,
+    });
+
+    const newData = this.arrayholder.filter(item => {
+      const itemData = `${item.name.title.toUpperCase()} ${item.name.first.toUpperCase()} ${item.name.last.toUpperCase()}`;
+      const textData = text.toUpperCase();
+
+      return itemData.indexOf(textData) > -1;
+    });
+    this.setState({
+      data: newData,
+    });
+  };
+
 
   render() {
-    const { location, loading } = this.state;
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get location, press the button:</Text>
-        <View style={styles.button}>
-          <Button
-            disabled={loading}
-            title="Get Location"
-            onPress={this._requestLocation}
-          />
-        </View>
-        {loading ? (
+    if (this.state.loading) {
+      return (
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <ActivityIndicator />
-        ) : null}
-        {location ? (
-          <Text style={styles.location}>
-            {JSON.stringify(location, 0, 2)}
-          </Text>
-        ) : null}
-        <Text style={styles.instructions}>Extra functions:</Text>
-        <View style={styles.button}>
-          <Button
-            title="Open App Settings"
-            onPress={() => {
-              GetLocation.openAppSettings();
-            }}
-          />
         </View>
-        <View style={styles.button}>
-          <Button
-            title="Open Gps Settings"
-            onPress={() => {
-              GetLocation.openGpsSettings();
-            }}
-          />
-        </View>
-        <View style={styles.button}>
-          <Button
-            title="Open Wifi Settings"
-            onPress={() => {
-              GetLocation.openWifiSettings();
-            }}
-          />
-        </View>
-        <View style={styles.button}>
-          <Button
-            title="Open Mobile Data Settings"
-            onPress={() => {
-              GetLocation.openCelularSettings();
-            }}
-          />
-        </View>
-        <Text style={styles.instructions}>{instructions}</Text>
+      );
+    }
+    return (
+      <View style={{ flex:2 }}>
+        <SearchBar
+          placeholder="Type Here..."
+          lightTheme
+          round
+          onChangeText={text => this.searchFilterFunction(text)}
+          autoCorrect={false}
+          value={this.state.value}
+          style={styles.SearchBar}
+        />
+        
+        <FlatList
+          data={this.state.data}
+          renderItem={({ item }) => (
+            <ListItem
+              leftAvatar={{ source: { uri: item.picture.thumbnail } }}
+              title={`${item.name.first} ${item.name.last}`}
+              subtitle={item.email}
+            />
+          )}
+          keyExtractor={item => item.email}
+          ItemSeparatorComponent={this.renderSeparator}
+          ListHeaderComponent={this.renderHeader}
+        />
       </View>
     );
   }
 }
 
+const styles = StyleSheet.create({
+  SearchBar: {
+    marginTop:100
+  },
+});
+
+
+
+
+
+
+
+
+/*import React, { Component } from 'react';
+import { View, StyleSheet, Text } from 'react-native';
+import { Location, Permissions } from 'expo';
+import { Ionicons } from '@expo/vector-icons';
+
+//
+export default class Notifications extends Component {
+  state = {
+    locationResult: null
+  };
+
+  componentDidMount() {
+    this._getLocationAsync();
+  }
+
+  _getLocationAsync = async () => {
+    let { status } = await Permissions.askAsync(Permissions.LOCATION);
+    if (status !== 'granted') {
+      this.setState({
+        locationResult: 'Permission to access location was denied',
+      });
+    }
+
+    let location = await Location.getCurrentPositionAsync({});
+    this.setState({ locationResult: JSON.stringify(location) });
+  };
+
+
+
+  render() {
+    return (
+
+      <View>
+        <Text>Location: {this.state.locationResult}</Text>
+        <Ionicons name="ios-book" color="#4F8EF7" />
+    
+  </View>
+);
+}
+}
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#ecf0f1',
+  },
+});*/

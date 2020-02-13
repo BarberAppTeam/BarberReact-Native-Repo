@@ -40,9 +40,9 @@ export default class SecondOnboarding extends Component {
     <KeyboardAwareScrollView>
       <Image style = {styles.Location}
       source = {require('./images/Location.png')}/>
-      <Text style = {styles.Reccomendation}> 
-      Get the best barber reccomendations around you! 
-      <Text styles={styles.Tonso}> NEAT</Text> will need to use your location services. </Text>
+      <Text style={styles.Reccomendation}> 
+          To get the best barber reccomendations around you! 
+      <Text style={styles.Neat}> NEAT</Text> will need to use your location services. </Text>
 
       <TouchableOpacity style = {styles.EnableLocation}
           onPress={() => {
@@ -115,9 +115,10 @@ const styles = StyleSheet.create({
        marginTop: 75,
        marginBottom: 10,
   },
-   Tonso: {
+   Neat: {
      fontWeight: 'bold',
-     color: '#5D9CEC',
+     color: '#435e59',
+     fontSize:25
    },
   EnableLocationText:{
     fontWeight: '600',
@@ -128,7 +129,7 @@ const styles = StyleSheet.create({
   },
   NotNow: {
     backgroundColor: '#DDDDDD',
-    fontSize: 18,
+    fontSize: 25,
     opacity:.5,
     fontFamily: 'Avenir Next',
     flexDirection: 'column',
@@ -147,18 +148,84 @@ const styles = StyleSheet.create({
   Reccomendation: {
      textAlign: 'center',
        paddingHorizontal: 15,
-       marginVertical: 20,
+       marginVertical: 10,
        marginHorizontal:7,
        textAlignVertical: 'center',
-       lineHeight: 25,
-       fontSize: 17,
+       lineHeight: 30,
+       fontSize: 20,
   },
   Location:{
-    marginVertical:130,
-     marginLeft: 85,
+    marginVertical:100,
+     marginLeft: 70,
      marginRight: 150,
-     height:200,
-     width:200
+    maxHeight:265,
+    maxWidth:265
   },
  
 })
+
+/*import React, { Component } from 'react';
+import { Platform, Text, View, StyleSheet } from 'react-native';
+import Constants from 'expo-constants';
+import * as Location from 'expo-location';
+import * as Permissions from 'expo-permissions';
+
+export default class App extends Component {
+  state = {
+    location: null,
+    errorMessage: null,
+  };
+
+  componentDidMount() {
+    if (Platform.OS === 'android' && !Constants.isDevice) {
+      this.setState({
+        errorMessage: 'Oops, this will not work on Sketch in an Android emulator. Try it on your device!',
+      });
+    } else {
+      this._getLocationAsync();
+    }
+  }
+
+  _getLocationAsync = async () => {
+    let { status } = await Permissions.askAsync(Permissions.LOCATION);
+    if (status !== 'granted') {
+      this.setState({
+        errorMessage: 'Permission to access location was denied',
+      });
+    }
+
+    let location = await Location.getCurrentPositionAsync({});
+    this.setState({ location });
+  };
+
+  render() {
+    let text = 'Waiting..';
+    if (this.state.errorMessage) {
+      text = this.state.errorMessage;
+    } else if (this.state.location) {
+      text = JSON.stringify(this.state.location);
+    }
+
+    return (
+      <View style={styles.container}>
+        <Text style={styles.paragraph}>{text}</Text>
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: Constants.statusBarHeight,
+    backgroundColor: '#ecf0f1',
+  },
+  paragraph: {
+    margin: 24,
+    fontSize: 18,
+    textAlign: 'center',
+  },
+});
+*/
