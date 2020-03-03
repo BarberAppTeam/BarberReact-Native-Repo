@@ -23,7 +23,7 @@ export default class ThirdOnboarding extends Component {
       <Text style={styles.Reminder}> Get reminders and notifications. Keep your appointments up to date. </Text>
 
       <TouchableOpacity style = {styles.Next}
-      onPress = {() => this.props.navigation.navigate('Form')}>
+      onPress = {() => this.props.navigation.navigate('Signin')}>
       <Text style={styles.GetStarted}> Get Started </Text>  
       
       

@@ -8,12 +8,12 @@ import {
 
 import { StackNavigator } from 'react-navigation';
 import { Ionicons } from '@expo/vector-icons';
-import ProfileScreen from "./ProfileScreen";
+import ProfileSideNav from "./ProfileSideNav";
 import CalendarScreen from "./CalendarScreen";
 
 const stackNav = StackNavigator({
     Profile: {
-        screen: ProfileScreen,
+        screen: ProfileSideNav,
         navigationOptions: ({ navigation }) => ({
             title: "Profile",
             headerLeft: (<TouchableOpacity onPress={() => navigation.navigate("DrawerOpen")}>

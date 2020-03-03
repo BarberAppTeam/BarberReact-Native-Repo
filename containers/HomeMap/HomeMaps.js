@@ -4,9 +4,9 @@ import {Stylesheet,View,Text,TouchableOpacity,Platform, Button, Alert,AppRegistr
 import MapView, {AnimatedRegion,Animated} from 'react-native-maps';
 import {Constants} from 'expo';
 import * as Location from 'expo-location';
-import Permissions from 'react-native-permissions';
 import { Ionicons } from '@expo/vector-icons';
 import { Hub, Logger } from 'aws-amplify';
+import Permissions from 'react-native-permissions';
 
 /*function reCenter() {
     //Declaring a new state variable, we'll call recenter, trying  to capture the long and lat
@@ -43,7 +43,7 @@ Hub.listen('auth', listener);
 
 
 export default class HomeMaps extends Component {
-   
+   /**?state is local to a component */
     componentDidMount() {
         if (Platform.OS === 'android' && !Constants.isDevice) {
             this.setState({
@@ -75,32 +75,22 @@ export default class HomeMaps extends Component {
 
     };
 
-    getInitialState() {
-        return {
+    constructor(props) {
+        super(props);
+        this.state = {
             region: new AnimatedRegion({
                 latitude: 33.741531,
                 longitude: -118.194176,
                 latitudeDelta: 0.0922,
                 longitudeDelta: 0.0421,
-                 
-               
-
-                
-            }),
-            
-        };
+            })
+        }
     }
-
      
-
   render() {
-    
     
     return (
       
-    
-
-    
         <View style={styles.mainContainerView}>
 
             <MapView style={styles.MapView}
@@ -108,7 +98,6 @@ export default class HomeMaps extends Component {
                 showsMyLocationButton={true}
                 showsBuildings={true}
                 zoomEnabled={true}
-
 
                 initialRegion={
                     {

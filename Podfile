@@ -47,4 +47,5 @@ use_frameworks!
     # Pods for testing
   end
  
+  target 'Neat' do
   

@@ -1,16 +1,13 @@
 
 import React, { Component } from 'react';
-
 import { View, Image, TouchableOpacity } from 'react-native';
-
-
-//For React Navigation 4+
 import { createAppContainer } from 'react-navigation';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import { createStackNavigator } from 'react-navigation-stack';
 import CalendarScreen from './CalendarScreen';
 import AccountInfo from './AccountInfo';
 import Payments from './Payments';
+import Messaging from './Messaging'
 import { Hub, Logger } from 'aws-amplify';
 import { SignOut } from 'aws-amplify-react-native';
 
@@ -119,6 +116,21 @@ const Screen3_StackNavigator = createStackNavigator({
   },
 });
 
+const Screen4_StackNavigator = createStackNavigator({
+  //All the screen from the Screen3 will be indexed here
+  Fourth: {
+    screen: Messaging,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Inbox',
+      headerLeft: <NavigationDrawerStructure navigationProps={navigation} />,
+      headerStyle: {
+        backgroundColor: '#FF9800',
+      },
+      headerTintColor: '#fff',
+    }),
+  }
+});
+
 //For React Navigation 2.+ need to use DrawerNavigator instead createDrawerNavigator
 //const DrawerNavigatorExample = DrawerNavigator({
 
@@ -146,6 +158,13 @@ const DrawerNavigatorExample = createDrawerNavigator({
     screen: Screen3_StackNavigator,
     navigationOptions: {
       drawerLabel: 'Payments',
+    },
+  },
+  Messaging: {
+    //Title
+    screen: Screen4_StackNavigator,
+    navigationOptions: {
+      drawerLabel: 'Messaging',
     },
   },
 });

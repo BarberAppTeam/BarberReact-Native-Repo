@@ -10,7 +10,7 @@ import {
     Button
 } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import Amplify, { Auth } from 'aws-amplify';
+import { default as awsConfig } from "../aws-exports";
 import SafeAreaView from 'react-native-safe-area-view';
 import { userInfo } from 'os';
 import { View } from 'native-base';
@@ -20,40 +20,22 @@ import { Ionicons } from '@expo/vector-icons';
 //import {GoogleSignin} from '@react-native-community/google-signin';
 
 
-/*Auth.signUp({
-    username,
-    password,
-    attributes: {
-        email,          // optional
-        phone_number,   // optional - E.164 number convention
-        // other custom attributes 
-    },
-    validationData: []  //optional
-    })
-    .then(data => console.log(data))
-    .catch(err => console.log(err));
 
-// After retrieving the confirmation code from the user
-Auth.confirmSignUp(username, code, {
-    // Optional. Force user confirmation irrespective of existing alias. By default set to True.
-    forceAliasCreation: true    
-}).then(data => console.log(data))
-  .catch(err => console.log(err));
-
-Auth.resendSignUp(username).then(() => {
-    console.log('code resent successfully');
-}).catch(e => {
-    console.log(e);
+/*Amplify.configure({
+  Auth: {
+    oauth:{
+      // OAuth config...
+    }
+  },
 });*/
 
-export default class LoginForm extends Component {
+
+export default class SignupScreen extends Component {
 
     static navigationOptions = {
         header: null
     }
     render() {
-        
-
 
         // This code below is for the Google Sign In button
         /*async function bootstrap() {
@@ -62,49 +44,125 @@ export default class LoginForm extends Component {
             webClientId: '632469254182-uei9ta0gadqincovpsoj37prqtp0e78u.apps.googleusercontent.com', // required
           });
         }*/
-
-
-
-
         return (
 
-<KeyboardAwareScrollView style={styles.loginScreen} >
 
-    <Image source={require('../OnBoarding/images/Neat.png')} style={styles.Pillar} />
+            <KeyboardAwareScrollView style={styles.SignUp} >
+
+            
+                    <View style={styles.NeatLogoContainer}>
+                        <TouchableOpacity
+                            onPress={() => this.props.navigation.navigate('Signin')}>
+                            <Text style={styles.SigninText}> SIGN IN </Text>
+                        </TouchableOpacity>
+                    <Image source={require('../OnBoarding/images/Neat.png')} style={styles.NeatLogo} />
+                </View>
+
+                <View style={styles.rectangle}>
+
+                    <View style={styles.emailContainer}>
+                        <Image style={styles.mail} source={require('../Login/important-mail.png')} />
+                        <TextInput
+                            placeholder='Email                                            '
+                            placeholderTextColor='rgb(0,0,0)'
+                            /*After a user enters their username it will give the option to
+                            go to the next field
+                            
+                            social sign in **remove from TextInput
+                            <Button title="Facebook" onPress={facebookSignIn} />
+                            <Button title="Google" onPress={googleSignIn}/>
+                            */
+                            returnKeyType="next"
+                            onSubmitEditing={
+                                () => this.passwordInput.focus()
+                            }
+                            keyboardType='email-address'
+                            autoCapitalize='none'
+                            autoCorrect={false}
+                            style={styles.Username}
+                        />
+
+                    </View>
 
 
+                    <View style={styles.passwordContainer}>
+                        <Image style={styles.lock} source={require('../Login/lock-26.png')} />
+                        <TextInput
+                            placeholder='Password                                      '
+                            placeholderTextColor='rgb(0,0,0)'
+                            // ''
+                            returnKeyType='go'
+                            securedTextEntry='true'
+                            style={styles.Password}
+                        //ref={()=> this.passwordInput = Input}
+                        //stores password input
+                        />
+                    </View>
 
-    <View style={styles.rectangle}>
+                    <View style={styles.passwordContainer}>
+                        <Image style={styles.lock} source={require('../Login/lock-26.png')} />
+                        <TextInput
+                            placeholder='Confirm Password                      '
+                            placeholderTextColor='rgb(0,0,0)'
+                            // ''
+                            returnKeyType='go'
+                            securedTextEntry='true'
+                            style={styles.Password}
+                        //ref={()=> this.passwordInput = Input}
+                        //stores password input
+                        />
+                    </View>
 
+                    
+                        <TouchableOpacity style={styles.RegisterContainer}
+                            onPress={() => this.props.navigation.navigate('Signin')}>
+                            <Text style={styles.RegisterText}> REGISTER </Text>
+                        </TouchableOpacity>
+                        </View>
+                
+            </KeyboardAwareScrollView >
 
-
-        <Ionicons style={styles.emailIcon} ios="ion-email" size={45} />
-       
-
-        
-
-
-        <TouchableOpacity
-            style={styles.RegisterContainer}
-            onPress={() => this.props.navigation.navigate('Registration')}>
-            <Text style={styles.RegisterText}> Register </Text>
-        </TouchableOpacity>
-
-
-        <Text style={styles.NoAccountText}> Don't Have an Account? Sign Up!</Text>
-    </View>
-</KeyboardAwareScrollView >
-      
-    )
-  }
+        )
+    }
 }
 
 
 const styles = StyleSheet.create({
+    passwordContainer: {
+        flexDirection: 'row'
+    },
+    emailContainer: {
+        flexDirection: 'row'
+    },
 
-    loginScreen: {
-        backgroundColor: '#dfe4ff'
+    SignUp: {
+        backgroundColor: '#dfe4ff',
 
+    },
+
+    Password: {
+        height: 60,
+        backgroundColor: '#FFFFFF',
+        marginBottom: 10,
+        color: '#000000',
+        borderBottomWidth: .6,
+        marginLeft: 10,
+        marginRight: 80,
+        fontSize: 18,
+
+    },
+    lock: {
+        color: '#cdcdd7',
+        marginHorizontal: 15,
+        marginVertical: 20,
+        marginLeft: 40
+
+    },
+    mail: {
+        color: '#cdcdd7',
+        marginLeft: 45,
+        marginVertical: 2,
+        marginTop: 90
     },
     emailIcon: {
         marginLeft: 35,
@@ -124,11 +182,12 @@ const styles = StyleSheet.create({
         shadowOpacity: 1,
         paddingTop: StatusBar.currentHeight,
         backgroundColor: '#FFFFFF',
+        flex: 1,
+        marginTop: 50
+
 
     },
     container: {
-        padding: 20,
-        marginTop: 50,
         flex: 1,
         paddingHorizontal: 5,
         marginBottom: 50,
@@ -148,30 +207,31 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     Username: {
-        height: 50,
+        height: 60,
         backgroundColor: '#FFFFFF',
-        marginBottom: 5,
+        marginBottom: 2.5,
         color: '#000000',
-        borderBottomWidth: .7,
-        marginLeft: 80,
+        borderBottomWidth: .8,
+        marginLeft: 29,
         marginRight: 80,
         marginVertical: 2,
+        fontSize: 18,
+        marginTop: 70
 
 
     },
-    Password: {
-        height: 50,
-        backgroundColor: '#FFFFFF',
-        marginBottom: 5,
-        color: '#000000',
-        borderBottomWidth: .7,
-        marginLeft: 80,
-        marginRight: 80,
-
-    },
-    LoginText: {
-        color: 'black',
-        fontSize: 18
+    SigninText: {
+        width: 73,
+        height: 23,
+        opacity: 0.53,
+        fontSize: 16,
+        fontWeight: "500",
+        fontStyle: "normal",
+        letterSpacing: 0,
+        color: "#000000",
+        marginVertical: 10,
+        marginVertical: 60,
+        marginLeft: 300
 
     },
 
@@ -184,10 +244,8 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center'
     },
-    SignInContainer: {
-        backgroundColor: '#DDDDDD',
+    RegisterContainer:{
         fontSize: 18,
-        opacity: .5,
         fontFamily: 'Avenir Next',
         flexDirection: 'column',
         justifyContent: 'space-around',
@@ -199,41 +257,34 @@ const styles = StyleSheet.create({
         paddingHorizontal: 96,
         height: 50,
         marginVertical: 10,
-        borderRadius: 5
-    },
-    RegisterContainer: {
-        
-        fontSize: 18,
-        opacity: .9,
-        fontFamily: 'Avenir Next',
-        flexDirection: 'column',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        alignSelf: 'center',
-        alignContent: 'center',
-        color: 'white',
-        textAlign: 'center',
-        paddingVertical: 10,
-        paddingHorizontal: 90,
         width: 327,
-        marginVertical: 5,
-        borderRadius: 25,
         height: 50,
+        borderRadius: 25,
         backgroundColor: "#fa7268"
+
     },
     RegisterText: {
-        color: 'white',
-        fontSize: 18
+        width: 246,
+        height: 24,
+        fontFamily: "Avenir",
+        fontSize: 16,
+        fontWeight: "900",
+        fontStyle: "normal",
+        lineHeight: 24,
+        letterSpacing: 0,
+        textAlign: "center",
+        color: "#ffffff"
     },
     NoAccountText: {
         paddingVertical: 15,
-        textAlign: 'center',
-        marginBottom: 10,
+        textAlign: 'right',
+        marginRight: 50,
     },
     buttonText: {
         textAlign: 'center',
         color: '#FFFFFF',
         fontWeight: '700',
+        marginRight: 10
 
     },
     goBack: {
@@ -250,32 +301,123 @@ const styles = StyleSheet.create({
     KeyBoardView: {
         flex: 1,
     },
-    Pillar: {
+    NeatLogo: {
         maxWidth: 250,
         maxHeight: 365,
-        marginBottom: 50,
-        marginTop: 60,
-        marginVertical: 80,
-        marginLeft: 80,
-        colors: ['rgb(38,33,96)', 'rgb(144,38,142)']
-
+        marginTop:-75,
+        flex: 1,
+        alignSelf: 'center'
     },
-    GoBackContainer: {
-        backgroundColor: '#FFFFFF',
-        opacity: 0.9,
-        fontSize: 16,
-        paddingHorizontal: 20,
-        flexDirection: 'column',
-        justifyContent: 'space-around',
-        alignItems: 'center',
-        paddingVertical: 10,
-        marginTop: 5,
-        marginBottom: 1,
-        fontFamily: 'Avenir Next',
-        color: 'black',
-        textAlign: 'center'
+    NeatLogoContainer: {
+        alignSelf: 'center'
     }
 
-})
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*import React, { Component } from 'react';
+import {
+  Text,
+  View,
+  StyleSheet
+} from 'react-native';
+import { Hub, Logger } from 'aws-amplify';
+import Amplify from 'aws-amplify';
+import awsmobile from '../aws-exports';
+import { withAuthenticator } from 'aws-amplify-react-native';
+
+const logger = new Logger('My-Logger');
+
+const listener = (data) => {
+
+  switch (data.payload.event) {
+
+    case 'signIn':
+      logger.error('user signed in'); //[ERROR] My-Logger - user signed in
+      break;
+    case 'signUp':
+      logger.error('user signed up');
+      break;
+    case 'signOut':
+      logger.error('user signed out');
+      break;
+    case 'signIn_failure':
+      logger.error('user sign in failed');
+      break;
+
+
+  }
+}
+
+Hub.listen('auth', listener);
+
+Amplify.configure(awsmobile);
+
+class Signin extends Component { }
+
+const signUpConfig = {
+  header: 'My Customized Sign Up',
+  hideAllDefaults: true,
+  defaultCountryCode: '1',
+  signUpFields: [
+    {
+      label: 'My user name',
+      key: 'username',
+      required: true,
+      displayOrder: 1,
+      type: 'string'
+    },
+    {
+      label: 'Password',
+      key: 'password',
+      required: true,
+      displayOrder: 2,
+      type: 'password'
+    },
+    {
+      label: 'PhoneNumber',
+      key: 'phone_number',
+      required: true,
+      displayOrder: 3,
+      type: 'string'
+    },
+    {
+      label: 'Email',
+      key: 'email',
+      required: true,
+      displayOrder: 4,
+      type: 'string'
+    }
+  ]
+};
+const usernameAttributes = 'My user name';
+
+export default withAuthenticator(Signin, {
+  signUpConfig,
+  usernameAttributes
+});*/
+
+
 
 

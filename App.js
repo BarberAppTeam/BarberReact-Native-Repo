@@ -1,13 +1,13 @@
 import React from 'react';
 import { createStackNavigator} from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
-import LoginForm from './Login/LoginFormScreen';
+import Signin from './Login/Signin';
 import GettingStartedScreen from './Login/GettingStartedScreen'
 import FirstOnboarding from './OnBoarding/FirstOnboardingScreen'
 import SecondOnboarding from './OnBoarding/SecondOnboardingScreen';
 import ThirdOnboarding from './OnBoarding/ThirdOnboardingScreen';
 import CustomTabBar from './screens/CustomTabNavigatorScreen';
-import SignUp from './Login/Signup';
+import SignUpScreen from './Login/Signup';
 //import Amplify from 'aws-amplify';
 //import awsmobile from './aws-exports';
 
@@ -28,9 +28,9 @@ const AppNavigator = createStackNavigator({
   Intro:{screen: FirstOnboarding},
   Intro2:{screen: SecondOnboarding},
   Intro3:{screen: ThirdOnboarding},
-  Form: {screen: LoginForm},
+  Signin: {screen: Signin},
   HomeNav:{screen:CustomTabBar},
-  SignUp:{screen:SignUp}
+  SignUp:{screen:SignUpScreen}
   
 },
 {

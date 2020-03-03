@@ -4,4 +4,4 @@
 
 'use strict';
 
-module.exports = require('./local-cli/cli.js');
+module.exports = require('./local-cli/cli.js.js');

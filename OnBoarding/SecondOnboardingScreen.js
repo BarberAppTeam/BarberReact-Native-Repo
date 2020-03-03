@@ -4,7 +4,9 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import Constants from 'expo-constants';
 import * as Location from 'expo-location';
-import {Permissions} from 'expo-permissions';
+import { Button } from 'native-base';
+import * as Permissions from 'expo-permissions';
+//import Permissions from 'react-native-permissions';
 
 export default class SecondOnboarding extends Component {
 
@@ -12,23 +14,35 @@ export default class SecondOnboarding extends Component {
     header: null
   }
 
-
-  permissionFlow = async function getLocationAsync() {
-    // permissions returns only for location permissions on iOS and under certain conditions, see Permissions.LOCATION
-    const { status, permissions } = await Permissions.askAsync(Permissions.LOCATION);
-    if (status === 'granted') {
-      return Location.getCurrentPositionAsync({ enableHighAccuracy: true });
+  componentDidMount() {
+    if (Platform.OS === 'android' && !Constants.isDevice) {
+      this.setState({
+        errorMessage: 'Oops, this will not work on Sketch in an Android emulator. Try it on your device!',
+      });
     } else {
-      throw new Error('Location permission not granted'),
-      Linking.openURL('app-settings:')
+      this._getLocationAsync();
+    }
+  }
+  _getLocationAsync = async () => {
+    let { status } = await Permissions.askAsync(Permissions.LOCATION);
+
+    if (status !== 'granted') {
+      const response = await Permissions.askAsync(Permissions.LOCATION)
+      this.setState({
+        locationResult: 'Permission to access location was denied',
+      });
+
+      navigator.geolocation.getCurrentPosition(
+        ({ coords: { longitude, latitude } }) => this.setState({ latitude, longitude }), () => console.log('State:', this.state),
+        (error) => console.log('Error:', error)
+      )
     }
 
-    /*
-      Get some data
-    */
-   /* const { data } = await Permissions.getAsync(Permissions.LOCATION, { pageSize: 1 });
-    console.log(data[0]);*/
-  
+    let location = await Location.getCurrentPositionAsync({});
+    this.setState({ locationResult: JSON.stringify(location) });
+
+    //What I am trying to achieve above is Render Geocoding to get the users current location
+
   };
 
 
@@ -44,18 +58,12 @@ export default class SecondOnboarding extends Component {
           To get the best barber reccomendations around you! 
       <Text style={styles.Neat}> NEAT</Text> will need to use your location services. </Text>
 
-      <TouchableOpacity style = {styles.EnableLocation}
-          onPress={() => {
-            this.permissionFlow
-            /*
-            Permissions.request(
-              Permissions.PERMISSIONS.IOS.LOCATION_WHEN_IN_USE
-            ).then(granted => {
-              alert(granted) // just to ensure that permissions were granted
-            });*/
-          }}>
+      <Button style={styles.EnableLocation}
+          onPress={this._getLocationAsync}>
+           
+          
           <Text style={styles.EnableLocationText}> Enable Location </Text>  
-      </TouchableOpacity> 
+      </Button> 
        < TouchableOpacity style = {styles.NotNow}
        onPress = {() => this.props.navigation.navigate('Intro3')}>
          <Text> Not Now </Text>   
