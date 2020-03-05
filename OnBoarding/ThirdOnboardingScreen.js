@@ -23,7 +23,7 @@ export default class ThirdOnboarding extends Component {
       <Text style={styles.Reminder}> Get reminders and notifications. Keep your appointments up to date. </Text>
 
       <TouchableOpacity style = {styles.Next}
-      onPress = {() => this.props.navigation.navigate('Form')}>
+      onPress = {() => this.props.navigation.navigate('Signin')}>
       <Text style={styles.GetStarted}> Get Started </Text>  
       
       
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
     marginTop: 20,
     lineHeight:25,
-    fontSize:18
+    fontSize:22
 
   },
   GetStarted: {
@@ -84,17 +84,16 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       height:250,
       width:250,
-      marginLeft:50,
-      marginVertical:35
+      marginLeft:65,
+      marginVertical:55
   },
   notificationsBox:{
-    justifyContent: 'center',
+
       height: 200,
       width: 300,
       resizeMode:'cover',
-      marginVertical: 5,
       borderRadius:8,
-      marginLeft:40
+      marginLeft:60
   }
 
   /*GoBackContainer: {

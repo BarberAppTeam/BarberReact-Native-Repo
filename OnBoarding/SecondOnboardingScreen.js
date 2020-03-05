@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
-import { Image, StyleSheet, Text } from 'react-native';
+import { Image, StyleSheet, Text, Platform, Linking } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-
+import Constants from 'expo-constants';
+import * as Location from 'expo-location';
+import { Button } from 'native-base';
+import * as Permissions from 'expo-permissions';
+//import Permissions from 'react-native-permissions';
 
 export default class SecondOnboarding extends Component {
 
@@ -10,19 +14,56 @@ export default class SecondOnboarding extends Component {
     header: null
   }
 
+  componentDidMount() {
+    if (Platform.OS === 'android' && !Constants.isDevice) {
+      this.setState({
+        errorMessage: 'Oops, this will not work on Sketch in an Android emulator. Try it on your device!',
+      });
+    } else {
+      this._getLocationAsync();
+    }
+  }
+  _getLocationAsync = async () => {
+    let { status } = await Permissions.askAsync(Permissions.LOCATION);
+
+    if (status !== 'granted') {
+      const response = await Permissions.askAsync(Permissions.LOCATION)
+      this.setState({
+        locationResult: 'Permission to access location was denied',
+      });
+
+      navigator.geolocation.getCurrentPosition(
+        ({ coords: { longitude, latitude } }) => this.setState({ latitude, longitude }), () => console.log('State:', this.state),
+        (error) => console.log('Error:', error)
+      )
+    }
+
+    let location = await Location.getCurrentPositionAsync({});
+    this.setState({ locationResult: JSON.stringify(location) });
+
+    //What I am trying to achieve above is Render Geocoding to get the users current location
+
+  };
+
+
+
   render() {
-    return ( <KeyboardAwareScrollView>
+  
+    return ( 
+    
+    <KeyboardAwareScrollView>
       <Image style = {styles.Location}
       source = {require('./images/Location.png')}/>
-      <Text style = {styles.Reccomendation}> 
-      Get the best barber reccomendations around you! 
-      <Text styles={styles.Tonso}> TONSO</Text> will need to use your location services. </Text>
+      <Text style={styles.Reccomendation}> 
+          To get the best barber reccomendations around you! 
+      <Text style={styles.Neat}> NEAT</Text> will need to use your location services. </Text>
 
-      <TouchableOpacity style = {styles.EnableLocation}
-      onPress = {() => this.props.navigation.navigate('')}>
-      <Text style={styles.EnableLocationText}> Enable Location </Text>  
-      </TouchableOpacity> 
-
+      <Button style={styles.EnableLocation}
+          onPress={this._getLocationAsync}>
+           
+          
+          <Text style={styles.EnableLocationText}> Enable Location </Text>  
+      </Button> 
        < TouchableOpacity style = {styles.NotNow}
        onPress = {() => this.props.navigation.navigate('Intro3')}>
          <Text> Not Now </Text>   
@@ -31,9 +72,42 @@ export default class SecondOnboarding extends Component {
       </KeyboardAwareScrollView>
     )
   }
-}
+};
+
+
+const Neat = {
+  expo: {
+    ios: {
+      infoPlist: {
+        NSCalendarsUsageDescription:
+          'Allow Expo experiences to access your calendar',
+        NSCameraUsageDescription:
+          'Expo uses your camera to scan project QR codes. Expo experiences you open may use the camera with the Expo camera API.',
+        NSContactsUsageDescription:
+          'Allow Expo experiences to access your contacts',
+        NSLocationWhenInUseUsageDescription:
+          'Allow Expo experiences to use your location',
+        NSMicrophoneUsageDescription:
+          'Allow Expo experiences to access your microphone',
+        NSMotionUsageDescription:
+          "Allow Expo experiences to access your device's accelerometer",
+        NSPhotoLibraryAddUsageDescription:
+          'Give Expo experiences permission to save photos',
+        NSPhotoLibraryUsageDescription:
+          'Give Expo experiences permission to access your photos',
+        NSRemindersUsageDescription:
+          'Allow Expo experiences to access your reminders',
+      },
+    },
+  },
+};
 
 const styles = StyleSheet.create({
+  paragraph: {
+    margin: 24,
+    fontSize: 18,
+    textAlign: 'center',
+  },
   EnableLocation: {
      backgroundColor: '#9AE1D3',
        flexDirection: 'column',
@@ -49,9 +123,10 @@ const styles = StyleSheet.create({
        marginTop: 75,
        marginBottom: 10,
   },
-   Tonso: {
+   Neat: {
      fontWeight: 'bold',
-     color: '#5D9CEC',
+     color: '#435e59',
+     fontSize:25
    },
   EnableLocationText:{
     fontWeight: '600',
@@ -62,7 +137,7 @@ const styles = StyleSheet.create({
   },
   NotNow: {
     backgroundColor: '#DDDDDD',
-    fontSize: 18,
+    fontSize: 25,
     opacity:.5,
     fontFamily: 'Avenir Next',
     flexDirection: 'column',
@@ -81,17 +156,84 @@ const styles = StyleSheet.create({
   Reccomendation: {
      textAlign: 'center',
        paddingHorizontal: 15,
-       marginVertical: 20,
+       marginVertical: 10,
+       marginHorizontal:7,
        textAlignVertical: 'center',
-       lineHeight: 25,
-       fontSize: 17,
+       lineHeight: 30,
+       fontSize: 20,
   },
   Location:{
-    marginVertical:130,
-     marginLeft: 85,
+    marginVertical:100,
+     marginLeft: 70,
      marginRight: 150,
-     height:200,
-     width:200
+    maxHeight:265,
+    maxWidth:265
   },
  
 })
+
+/*import React, { Component } from 'react';
+import { Platform, Text, View, StyleSheet } from 'react-native';
+import Constants from 'expo-constants';
+import * as Location from 'expo-location';
+import * as Permissions from 'expo-permissions';
+
+export default class App extends Component {
+  state = {
+    location: null,
+    errorMessage: null,
+  };
+
+  componentDidMount() {
+    if (Platform.OS === 'android' && !Constants.isDevice) {
+      this.setState({
+        errorMessage: 'Oops, this will not work on Sketch in an Android emulator. Try it on your device!',
+      });
+    } else {
+      this._getLocationAsync();
+    }
+  }
+
+  _getLocationAsync = async () => {
+    let { status } = await Permissions.askAsync(Permissions.LOCATION);
+    if (status !== 'granted') {
+      this.setState({
+        errorMessage: 'Permission to access location was denied',
+      });
+    }
+
+    let location = await Location.getCurrentPositionAsync({});
+    this.setState({ location });
+  };
+
+  render() {
+    let text = 'Waiting..';
+    if (this.state.errorMessage) {
+      text = this.state.errorMessage;
+    } else if (this.state.location) {
+      text = JSON.stringify(this.state.location);
+    }
+
+    return (
+      <View style={styles.container}>
+        <Text style={styles.paragraph}>{text}</Text>
+      </View>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingTop: Constants.statusBarHeight,
+    backgroundColor: '#ecf0f1',
+  },
+  paragraph: {
+    margin: 24,
+    fontSize: 18,
+    textAlign: 'center',
+  },
+});
+*/

@@ -1,39 +1,37 @@
 import * as React from 'react';
 import { createBottomTabNavigator} from 'react-navigation-tabs';
-import Icon from 'react-native-vector-icons/Ionicons';
 import HomeMapStackScreen from './HomeMapStackScreen';
 import ExploreStackScreen from './ExploreStackScreen';
 import ProfileStackScreen from './ProfileStackScreen';
 import NotificationStackScreen from './NotificationStackScreen';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
 
-const ICON_SIZE = 30;
 const CustomTabBar = createBottomTabNavigator({
 
     
+    FindBarber:{
+        screen:HomeMapStackScreen,
+        navigationOptions:{
+            header:null,
+            tabBarlabel:'Map',
+            tabBarIcon:({tintColor}) => (
+                <Ionicons name="ios-compass" size={32} style={styles.Icon}/>
+            )
+
+        }
+
+    },
     Explore:{
         screen:ExploreStackScreen,
         navigationOptions:{
             header:null,
             tabBarlabel:'Explore',
             tabBarIcon:({tintColor}) => (
-                <Icon name="ios-home" size={ICON_SIZE}/>
+                <Ionicons name="ios-home" size={32} style={styles.Icon} />
             )
         }
-    },
-    
-    Map:{
-        screen:HomeMapStackScreen,
-        navigationOptions:{
-            header:null,
-            tabBarlabel:'Barbers',
-            tabBarIcon:({tintColor}) => (
-                <Icon name = "ios-compass" color={tintColor} size={ICON_SIZE}/>
-            )
-
-        }
-
     },
     Notifications:{
         screen:NotificationStackScreen,
@@ -41,7 +39,7 @@ const CustomTabBar = createBottomTabNavigator({
             header:null,
             tabBarlabel:'Notifications',
             tabBarIcon:({tintColor}) => (
-                <Icon name = "ios-notifications" color={tintColor} size={ICON_SIZE}/>
+                <Ionicons name="ios-notifications" size={32} style={styles.Icon} />
             )
         }
 
@@ -52,12 +50,16 @@ const CustomTabBar = createBottomTabNavigator({
             header:null,
             tabBarlabel:'Profile',
             tabBarIcon: ({ tintColor}) => (
-                <Icon name='md-contact' size={ICON_SIZE} color={tintColor}/>
+                <Ionicons name="md-contact" size={32} style={styles.Icon} />
             )
         }
     },
     
 }, 
+{
+    // see next line
+    headerMode: 'none',
+},
     {
         animationEnabled:false,
         swipeEnabled:false,
@@ -74,8 +76,14 @@ const CustomTabBar = createBottomTabNavigator({
             style: {
                 backgroundColor: 'rgba(215,215,215,0.1',
             },
+
         },
     });
+const styles = StyleSheet.create({
+Icon:{
+    marginTop:5
+}
 
+})
 export default  CustomTabBar;
 

@@ -1,10 +1,10 @@
 import {createStackNavigator} from 'react-navigation-stack';
-import Profile from '../containers/Profile';
+import ProfileSideNav from '../containers/Profile/ProfileSideNav';
 
 // Profile index to   
 const ProfileStack= createStackNavigator({
     Profile: {
-        screen:Profile,
+        screen:ProfileSideNav,
         navigationOptions:{
         header:null,
         }

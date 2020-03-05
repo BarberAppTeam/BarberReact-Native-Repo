@@ -13,7 +13,26 @@ const styles= StyleSheet.create({
         fontSize:20,
         color:'black',
         fontWeight:'bold'
-    }
-});
+    },
+    container:{
+    flex:1,
+    backgroundColor:'#fff',
+    alignItems:'center',
+    paddingTop:20,
+  },
+  navItemStyle: {
+    padding: 10
+  },
+  navSectionStyle: {
+    backgroundColor: 'lightgrey'
+  },
+  sectionHeadingStyle: {
+    paddingVertical: 10,
+    paddingHorizontal: 5
+  },
+  footerContainer: {
+    padding: 20,
+    backgroundColor: 'lightgrey'
+  }});
 
 export default styles;

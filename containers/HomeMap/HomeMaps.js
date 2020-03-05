@@ -1,150 +1,154 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import styles from './styles';
-import {
-    Stylesheet,
-    View,
-    Text,
-    TouchableOpactity,
-    Platform
-} from 'react-native';
+import {Stylesheet,View,Text,TouchableOpacity,Platform, Button, Alert,AppRegistry} from 'react-native';
+import MapView, {AnimatedRegion,Animated} from 'react-native-maps';
+import {Constants} from 'expo';
+import * as Location from 'expo-location';
+import { Ionicons } from '@expo/vector-icons';
+import { Hub, Logger } from 'aws-amplify';
+import Permissions from 'react-native-permissions';
+
+/*function reCenter() {
+    //Declaring a new state variable, we'll call recenter, trying  to capture the long and lat
+    const [recenterLong, setrecenterLong] = useState(locationResult);
+    const [recenterLat, setrecenterLat] =useState(locationResult => 'latitude')
+}*/
+
+
+const logger = new Logger('My-Logger');
+
+const listener = (data) => {
+
+    switch (data.payload.event) {
+
+        case 'signIn':
+            logger.error('user signed in'); //[ERROR] My-Logger - user signed in
+            break;
+        case 'signUp':
+            logger.error('user signed up');
+            break;
+        case 'signOut':
+            logger.error('user signed out');
+            break;
+        case 'signIn_failure':
+            logger.error('user sign in failed');
+            break;
+        case 'configured':
+            logger.error('the Auth module is configured');
+
+    }
+}
+
+Hub.listen('auth', listener);
+
 
 export default class HomeMaps extends Component {
+   /**?state is local to a component */
+    componentDidMount() {
+        if (Platform.OS === 'android' && !Constants.isDevice) {
+            this.setState({
+                errorMessage: 'Oops, this will not work on Sketch in an Android emulator. Try it on your device!',
+            });
+        } else {
+            this._getLocationAsync();
+        }
+    }
 
-     static navigationOptions = {
-         header: null
-     }
+    _getLocationAsync = async () => {
+        let { status } = await Permissions.askAsync(Permissions.LOCATION);
+        
+        if (status !== 'granted') {
+            const response = await Permissions.askAsync(Permissions.LOCATION)
+            this.setState({
+                locationResult: 'Permission to access location was denied',
+            });
+         
+        navigator.geolocation.getCurrentPosition(
+           ({coords:{longitude,latitude}}) => this.setState({latitude,longitude}), () => console.log('State:' , this.state),
+           (error) => console.log('Error:', error)
+        )}
 
+        let location = await Location.getCurrentPositionAsync({});
+        this.setState({ locationResult: JSON.stringify(location) });
+    
+    //What I am trying to achieve above is Render Geocoding to get the users current location
 
-  render() {
-    return (
-      <View style={styles.mainContainerView}>
-        <Text style={styles.mainText}> HomeMaps </Text>
-      </View>
-    );
-  }
-}
-
-
-//TEST
-
-
-//NativeMaps Code Here
-/*
-
-
-
-import MapView, {
-    Marker,
-    AnimatedRegion,
-    Polyline,
-    Provider_Google
-
-} from 'react-native-maps';
-import haversine from 'haversine';
-
-
-// Animated region will help animate markers when user location updates
-//Most of these items listed in this.state will be used later in the app
-contructor(props); {
-    super(props);
-
-    this.state ={
-        latitude: LATITUDE,
-        longitude: LONGITUDE,
-        routeCoordinates:  [],
-        distanceTravelled: 0,
-        prevLatLng: {},
-        coordinate: new AnimatedRegion({
-            latitude:LATITUDE,
-            longitude: LONGITUDE
-        })
     };
 
-}
-
-
-// getting the location cordinates everytime the user moves using the watchPosition method
-componentDidMount(); {
-    this.watchID = navigator.geolocation.watchPosition(
-        position => {
-            const { coordinate, routeCoordinates,distanceTravelled } =
-        this.state;
-        const { latitude, longitude } = position.coords;
-
-        const newCoordinate = {
-            latitude,
-            longitude
-        };
-
-
-
-//optional to keep - Calculating the distance traveled, storing the distance traveled by the user
-calcDistance = newLatLng => {
-    const { prevLatLng } = this.state;
-    return haversine(prevLatLng, newLatLng) || 0;
-};
-
-getMapRegion = () => ({
-    latitude: this.state.latitude,
-    longitude: this.state.longitude,
-    latitudeDelta: LATITUDE_DELTA,
-    longitudeDelta: LONGITUDE_DELTA
-});
-
-// newCoordinate stores updated coodinates received from position.coords..
-// Which then allows us to animate the marker to the new coordinates
-        if (Platform.OS === "ios"){
-            if (this.marker) {
-                this.marker._component.animateMarkerToCoordinate(
-                    newCoordinate,
-                    500
-                );
-               }       
-              }
-            else {
-                coordinate.timing(newCoordinate).start();
-            }
-// updating initial states...
-            this.setState({
-                latitude,
-                longitude,
-                routeCoordinates: routeCoordinates.concat([newCoordinate]),
-                distanceTravelled:
-                distanceTravelled + this.calcDistance(newCoordinate),
-                preLatLng: newCoordinate
-            });
-           },
-           error => console.log(error),
-           {enableHighAccuracy:true, timeout: 20000, maximumAge: 1000 }
-    );
-}
-
-//Rendering everthing on map
-//Polyline draws the path when the user moves
-//Polyline has acoordinate props which accept an array of coordinates which we can get from our routeCoordinates
-//MarkerAnimated shows the marker at the user current position
-<MapView
-    style={styles.map}
-    showUserLocation
-    followUserLocation
-    loadingEnabled
-    region={this.getMapRegion()}
-    >
+    constructor(props) {
+        super(props);
+        this.state = {
+            region: new AnimatedRegion({
+                latitude: 33.741531,
+                longitude: -118.194176,
+                latitudeDelta: 0.0922,
+                longitudeDelta: 0.0421,
+            })
+        }
+    }
+     
+  render() {
     
-    <Polyline coordinates={this.state.routeCoordinates} strokeWidth=
-    {3} />
-    <Marker.Animated
-    ref={marker => {
-        this.marker =marker;
-    }}
-    coordinate={this.state.coordinate}
-    />
-    </MapView>
+    return (
+      
+        <View style={styles.mainContainerView}>
 
-<View style={styles.buttonContainer}>
-    <TouchableOpactity style={[styles.bubble, styles.button]}>
-        <Text style={styles.bottomBarContent}>
-            {parseFloat(this.state.distanceTravelled).toFixed(2)} mi
-        </Text>
-    </TouchableOpactity>
-</View>*/
+            <MapView style={styles.MapView}
+                showsUserLocation
+                showsMyLocationButton={true}
+                showsBuildings={true}
+                zoomEnabled={true}
+
+                initialRegion={
+                    {
+                        latitude: 37.78825,
+                        longitude: -122.4324,
+                        latitudeDelta: 0.0922,
+                        longitudeDelta: 0.0421,
+                    }
+                }>
+
+
+                <Text style={styles.HeaderText}>Find Barbers <Text> Near You </Text>
+                </Text >
+
+                <TouchableOpacity style={styles.NotNow} onPress={() => this.props.navigation.navigate('Intro3')}>
+                    <Ionicons style={styles.locationButton} name="ios-locate" size={45} />
+                </TouchableOpacity>
+            </MapView>
+
+        </View>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+);
+
+}
+  }
+
+AppRegistry.registerComponent('BarberReact-Native-Repo', function(){ return HomeMaps})
+
+
+
+
+                /*<Animated
+                region={this.state.region}
+                onRegionChange={this.onRegionChange}
+                /> */     
+
+

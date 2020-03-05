@@ -14,7 +14,7 @@ export default class FistOnboarding extends Component {
         require('./hair-shaver.png')}/>
       
         <Text style = {styles.Description} > 
-        <Text style={styles.Tonso}> TONSO </Text> 
+        <Text style={styles.Neat}> NEAT </Text> 
         lets you easily find, book, pay for haircut appointments with local professionals. </Text>
 
         <TouchableOpacity style = {styles.Next}
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
      height: 50,
      paddingVertical: 10,
      paddingHorizontal: 95,
-     marginVertical: 85,
+     marginVertical: 60,
      borderRadius:5
  },
  NextText:{
@@ -52,23 +52,22 @@ const styles = StyleSheet.create({
  hair_shaver: {
      maxWidth: 350,
      maxHeight: 350,
-     marginBottom: 85,
-     marginTop: 100,
-     marginLeft: 30,
+     marginBottom: 55,
+     marginTop: 150,
+     marginLeft: 50,
 
  },
- Tonso: {
+ Neat: {
    fontWeight: "bold",
    color: '#5D9CEC',
-   lineHeight:25,
+   fontSize:25,
+   lineHeight:30,
    textAlign:'center',
    }
  ,
  Description: {
-   textAlign: 'auto',
-   paddingHorizontal: 1,
-   marginVertical:20,
-   
-   fontSize: 18,
+   paddingHorizontal: 20,
+   marginVertical:5,
+   fontSize: 20,
 }
 })

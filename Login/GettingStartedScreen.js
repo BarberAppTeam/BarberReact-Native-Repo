@@ -19,7 +19,7 @@ class GettingStartedScreen extends Component {
         return (
             <View style={styles.container}>
                     < Image source={
-                      require('./barberschair.png')
+                      require('./Neat.png')
                     }
                     style = {styles.chair}
                     onLoadStart = {
@@ -29,7 +29,7 @@ class GettingStartedScreen extends Component {
                     }
                     />
               
-                    <Text style={styles.Welcome}> WELCOME TO TONSO </Text>
+                    <Text style={styles.Welcome}> Welcome to Neat </Text>
                     <TouchableOpacity
                       style={styles.Next}
                       onPress={() => this.props.navigation.navigate('Intro')}> 
@@ -71,14 +71,13 @@ const styles = StyleSheet.create({
   },
   Welcome:{
     textAlign: 'center', // <-- the magic
-    fontWeight: 'bold',
     fontFamily:'Avenir Next',
     /*Use Font.loadAsync if you would like to load in a custom font late on componentDidMount() {
                       Font.loadAsync({
                         'open-sans-bold': require('./assets/fonts/OpenSans-Bold.ttf'),
                       })};*/
     fontSize: 30,
-    color:'#353b48',
+    color:'#000000',
 
   },
   logoContainer:{
@@ -87,10 +86,10 @@ const styles = StyleSheet.create({
     justifyContent:'center'
   },
   chair:{
-    maxWidth:350,
-    maxHeight:350,
-    marginBottom:100,
-    marginTop:170,
+    maxWidth:250,
+    maxHeight:365,
+    marginBottom:70,
+    marginTop:150,
   },
   GoBackContainer: {
     backgroundColor: '#FFFFFF',
